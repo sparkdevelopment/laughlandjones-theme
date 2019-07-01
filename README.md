@@ -1,6 +1,6 @@
-# Tonik — Wordpress Theme Boilerplate
+# Laughland Jones
 
-> The `develop` branch tracks boilerplate development and it's not a stable code. If you want a stable version, use the [`master`](//github.com/tonik/wordpress-theme-boilerplate/tree/master) branch or one of the latest [releases](//github.com/tonik/wordpress-theme-boilerplate/releases).
+> This site uses the [`Tonik Boilerplate`](//github.com/tonik/wordpress-theme-boilerplate/).
 
 ### Boilerplate aims to be compatible with a large range of PHP versions, however, still have modern tooling for developing a theme.
 
