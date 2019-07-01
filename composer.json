@@ -1,8 +1,6 @@
 {
-  "name": "tonik/wordpress-theme-boilerplate",
-  "description": "A modern WordPress boilerplate for building organized and standardized themes",
-  "keywords": ["tonik", "theme", "boilerplate", "wordpress", "wordpress-starter-theme", "wordpress-theme"],
-  "license": "MIT",
+  "name": "sparkdevelopment/laughlandjones-theme",
+  "description": "https://github.com/sparkdevelopment/laughlandjones-theme.git",
   "type": "wordpress-theme",
   "require": {
     "php": ">=5.2.4",
