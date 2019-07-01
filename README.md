@@ -2,8 +2,6 @@
 
 > This site uses the [`Tonik Boilerplate`](//github.com/tonik/wordpress-theme-boilerplate/).
 
-### Boilerplate aims to be compatible with a large range of PHP versions, however, still have modern tooling for developing a theme.
-
  What's inside?
 
 - [Gulp](//gulpjs.com/) - Task runner
@@ -14,11 +12,11 @@
 - [ESLint](//eslint.org/) - a JavaScript linter
 - [PHP_CodeSniffer](//github.com/squizlabs/PHP_CodeSniffer) - a PHP sniffer
 
-The front-end builder was borrowed from our [html-frontend-boilerplate](https://github.com/tonik/html-frontend-boilerplate) project.
+The front-end builder was borrowed from the Tonik [html-frontend-boilerplate](https://github.com/tonik/html-frontend-boilerplate) project.
 
 ### Requirements
 
-Boilerplate follows a [WordPress minimal requirements](https://wordpress.org/about/requirements/). Make sure you have these dependences installed before moving on:
+Boilerplate follows a [WordPress minimal requirements](https://wordpress.org/about/requirements/). Make sure you have these dependencies installed before moving on:
 - PHP >= 5.2.4
 
 Theme uses [NPM](//www.npmjs.com/) as a front-end dependency manager. Make sure your development machine has installed following dependencies:
@@ -27,25 +25,7 @@ Theme uses [NPM](//www.npmjs.com/) as a front-end dependency manager. Make sure 
 
 ## Installation
 
-WordPress themes lives in the `wp-content/themes` folder. This is where we have to fetch our fresh starter files.
-
-```bash
-# Go to the `themes` directory of your WordPress installation.
-$ cd wp-content/themes
-```
-
-Create project via `composer create-project` composer command.
-
-```bash
-$ composer create-project tonik/wordpress-theme-boilerplate <theme-name>
-```
-
-You can also directly download or clone the repository to the `wp-content/themes` directory.
-
-```bash
-# Clone repository to the <theme-name> folder.
-$ git clone -b master git@github.com:tonik/wordpress-theme-boilerplate.git <theme-name>
-```
+Install the WordPress theme to the `wp-content/themes` folder.
 
 ## Development
 
@@ -56,7 +36,7 @@ A [Gulp](https://gulpjs.com/) task runner is used to compile and optimize theme'
 Before being able to build theme you have to resolve required dependencies.
 
 ```bash
-# @ wp-content/themes/<theme-name>
+# @ wp-content/themes/laughlandjones
 
 # Install node dependencies.
 $ npm install
@@ -69,7 +49,7 @@ Now you have all the packages necessary to run the build process and start devel
 There are a few available commands which help you to build the theme for different environments:
 
 ```bash
-# @ wp-content/themes/<theme-name>
+# @ wp-content/themes/laughlandjones
 
 # Compiles unminified and unoptimized theme assets with source maps.
 $ npm run development
@@ -84,19 +64,9 @@ $ npm run production
 $ npm run prod
 
 # Builds assets for development, runs watcher (recompiles on change)
-# and BroswerSync (refreshes browser).
+# and BrowserSync (refreshes browser).
 $ npm run watch
 ```
-
-## Contributing
-
-Great that you are considering supporting the project. You have a lot of ways to help us grow. We appreciate all contributions, even the smallest.
-
-- Report an issue
-- Propose a feature
-- Send a pull request
-- Star project on the [GitHub](https://github.com/tonik/wordpress-theme-boilerplate)
-- Tell about project around your community
 
 ## License
 
