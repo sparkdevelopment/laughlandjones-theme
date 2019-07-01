@@ -1,0 +1,396 @@
+#approach {
+  @include prdb;
+
+  #sectors {
+    @include prdb;
+
+    width: 100%;
+    height: auto;
+    margin: 0;
+
+    .sector {
+      @include prdib;
+      @include box-sizing;
+
+      width: 50%;
+      border-top: 2px solid $dark_grey;
+      vertical-align: top;
+      margin: -1px 0 0;
+
+      &:nth-child(odd) {
+        border-right: 2px solid $dark_grey;
+      }
+
+      .icon-wrap {
+        @include dn;
+      }
+
+      .sector-icon {
+        @include prdb;
+
+        width: 60%;
+        margin: 10px auto;
+        transition: .3s ease transform;
+      }
+
+      h2 {
+        @include prdb;
+
+        margin-top: 15px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      .blackout {
+        @include padb;
+        @include highness;
+        @include opacityz(0);
+
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 255, 255, .4);
+        transition: .3s ease opacity;
+      }
+
+      &:active {
+        .sector-icon {
+          transition: .1s transform;
+          transform: scale(.9);
+        }
+
+        .blackout {
+          @include opacityz(1);
+
+          transition: 0s opacity;
+        }
+      }
+    }
+  }
+
+  #slideshows {
+    @include dn;
+  }
+
+  #subsectors-list {
+    @include pfdn;
+    @include box-sizing;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $dark_grey;
+    padding: 0 5%;
+    overflow-y: scroll;
+    padding-bottom: 70px;
+    transform: translateX(100%);
+
+    #back-link,
+    #slideshow {
+      @include dn;
+    }
+
+    &.show {
+      @include db;
+    }
+
+    #sector-close-button {
+      @include padb;
+      @include ontop;
+
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      border-radius: 100%;
+    }
+
+    #sector-copy {
+      #sector-heading {
+        margin: 40px auto 20px;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      #section-img {
+        $dim: 50px;
+
+        background-color: $light_grey;
+        height: $dim;
+        width: $dim;
+        margin: auto;
+        border-radius: 100%;
+        overflow: hidden;
+
+        img {
+          margin: 5px 0 0 5px;
+          width: 40px;
+        }
+      }
+
+      #subsections {
+        margin-top: 20px;
+
+        li {
+          width: 100%;
+          text-align: center;
+          color: $orange;
+          line-height: 1.6rem;
+          margin-bottom: 10px;
+
+          &::after {
+            @include prdb;
+
+            content: "";
+            width: 30px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, .2);
+            margin: 10px auto 0;
+          }
+
+          &:last-child {
+            &::after {
+              @include dn;
+            }
+          }
+        }
+      }
+    }
+
+    #subsection-copy {
+      p {
+        width: 100%;
+        text-align: center;
+        color: white;
+        font-size: .9rem;
+      }
+    }
+  }
+}
+
+// Smaller Phones
+@media all and (max-width: 340px) {
+  #approach {
+    #sectors {
+      .sector {
+        h2 {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// MOBILE
+@media all and (min-width: 767px) {
+  #approach {
+    #sectors {
+      .sector {
+        h2 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+// DESKTOP
+@media all and (min-width: 992px) {
+  #approach {
+    background-color: $dark_grey;
+
+    h1 {
+      @include prdb;
+      @include ontop;
+
+      color: white;
+    }
+
+    #sectors {
+      @include pfdb;
+
+      width: 300px;
+      height: 350px;
+      top: 50%;
+      left: 50px;
+      margin: -150px 0 0 0;
+      overflow: hidden;
+      z-index: 10;
+      border-right: 2px solid white;
+
+      .sector {
+        @include prdb;
+        @include box-sizing;
+
+        width: 100%;
+        height: 60px;
+        margin: 0 0 10px;
+        border: none;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:nth-child(odd) {
+          border: none;
+        }
+
+        .oa-icons,
+        .sector-title,
+        .sector-title::after {
+          transition: .3s ease all;
+        }
+
+        .icon-wrap {
+          @include prdib;
+
+          height: 60px;
+          width: 59.5px;
+
+          .oa-icons {
+            @include padb;
+
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: auto;
+          }
+
+          .orange-icon {
+            @include opacityz(0);
+          }
+        }
+
+        .sector-icon,
+        .blackout {
+          @include dn;
+        }
+
+        .sector-title,
+        .icon-wrap {
+          @include prdib;
+
+          vertical-align: middle;
+        }
+
+        .sector-title {
+          color: white;
+          margin: 6px 0 0 20px;
+          text-transform: uppercase;
+          text-align: left;
+
+          &::after {
+            @include prdb;
+
+            content: "";
+            height: 2px;
+            width: 0;
+            background-color: $orange;
+            margin-top: 5px;
+          }
+        }
+
+        &:hover {
+          .orange-icon {
+            @include opacityz(1);
+          }
+
+          .white-icon {
+            @include opacityz(0);
+          }
+
+          .sector-title {
+            color: $orange;
+          }
+        }
+
+        &.active {
+          .sector-title::after {
+            width: 100%;
+          }
+
+          .orange-icon {
+            @include opacityz(1);
+          }
+
+          .white-icon {
+            @include opacityz(0);
+          }
+
+          .sector-title {
+            color: $orange;
+          }
+        }
+      }
+    }
+
+    #subsectors-list {
+      @include padb;
+      @include box-sizing;
+
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      z-index: 5;
+      padding: 0;
+      overflow-y: hidden;
+      transform: none;
+
+      #section-img,
+      #sector-close-button {
+        @include dn;
+      }
+
+      #slideshow {
+        @include padb;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        z-index: auto;
+
+        .blackoutz {
+          @include padb;
+
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color: rgba(0, 0, 0, .6);
+          z-index: 5;
+        }
+
+        .slide-copy {
+          @include pfdb;
+
+          z-index: 10;
+          top: 50%;
+          left: 400px;
+          margin-top: -100px;
+
+          p {
+            line-height: 1.1rem;
+            font-size: .9rem;
+            text-transform: none;
+            color: white;
+            margin-top: 0;
+            margin-bottom: .5rem;
+            text-align: left;
+          }
+
+          .paragraphs {
+            width: 380px;
+          }
+        }
+      }
+    }
+  }
+}

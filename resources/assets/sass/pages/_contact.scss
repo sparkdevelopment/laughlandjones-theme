@@ -1,0 +1,401 @@
+#contact {
+  #contact-data-wrap {
+    @include prdb;
+
+    width: 100%;
+
+    #location-tabs {
+      @include prdb;
+      @include box-sizing;
+
+      width: 100%;
+      height: 44px;
+      overflow: hidden;
+
+      .tab {
+        @include prdib;
+
+        height: 44px;
+        width: 50%;
+        vertical-align: top;
+        overflow: hidden;
+
+        p {
+          @include prdb;
+
+          margin: 0;
+          color: white;
+          line-height: 44px;
+          text-align: center;
+          width: 100%;
+          font-size: 1.1rem;
+          font-style: italic;
+        }
+      }
+    }
+
+    &.studio {
+      #location-tabs {
+        .studio {
+          background-color: $orange;
+        }
+
+        .warehouse {
+          background-color: $dark_grey;
+        }
+      }
+
+      #studio {
+        @include db;
+      }
+
+      #warehouse {
+        @include dn;
+      }
+    }
+
+    &.warehouse {
+      #location-tabs {
+        .studio {
+          background-color: $dark_grey;
+        }
+
+        .warehouse {
+          background-color: $orange;
+        }
+      }
+
+      #studio {
+        @include dn;
+      }
+
+      #warehouse {
+        @include db;
+      }
+    }
+
+    .location {
+      @include prdb;
+      @include box-sizing;
+
+      background-color: $orange;
+      padding: 5%;
+      width: 100%;
+      height: auto;
+
+      .address {
+        @include prdb;
+
+        width: 100%;
+
+        .location-title {
+          @include dn;
+        }
+
+        p,
+        a {
+          text-align: center;
+          color: white;
+          line-height: 1.6rem;
+        }
+      }
+
+      .image {
+        @include dn;
+      }
+
+      .map {
+        @include prdb;
+
+        width: 100%;
+        height: auto;
+        margin: 0;
+
+        img {
+          @include prdb;
+
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  #social {
+    @include prdb;
+
+    margin: 40px auto 50px;
+    width: 90%;
+
+    h2 {
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    #news-subscribe.button {
+      margin: auto;
+    }
+
+    .social-wrap {
+      #brochure {
+        @include prdb;
+
+        height: 44px;
+        width: 240px;
+        overflow: hidden;
+        margin: 25px auto;
+        cursor: pointer;
+
+        img,
+        p {
+          @include prdib;
+
+          vertical-align: top;
+        }
+
+        p {
+          margin: 0 0 0 15px;
+          line-height: 45px;
+        }
+
+        img {
+          margin: 9px 0 0;
+          height: 25px;
+        }
+      }
+    }
+
+    .social-links {
+      @include prdb;
+
+      height: 44px;
+      width: 215px;
+      margin: 15px auto 30px;
+      text-align: center;
+
+      a {
+        @include prdib;
+
+        background-image: url("../../resources/assets/images/channel-logos.png");
+        background-size: 161px 42px;
+        height: 41px;
+        margin-right: 15px;
+        transition: .6s ease transform;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .twitter {
+        background-position: 0 0;
+        width: 44px;
+      }
+
+      .instagram {
+        background-position: -45px 0;
+        width: 40px;
+      }
+
+      .linkedin {
+        background-position: -86px 0;
+        width: 37px;
+      }
+
+      .pinterest {
+        background-position: -125px 0;
+        width: 37px;
+        height: 42px;
+      }
+    }
+  }
+}
+
+// TABLET
+@media all and (min-width: 780px) {
+  #contact {
+    #contact-data-wrap {
+      width: 80%;
+      margin: auto;
+    }
+  }
+}
+
+// DESKTOP
+@media all and (min-width: 992px) {
+  #contact {
+    margin-bottom: 80px;
+
+    #contact-data-wrap {
+      width: 900px;
+      padding: 0;
+
+      #location-tabs {
+        .tab {
+          @include box-sizing;
+        }
+      }
+
+      &.studio {
+        #location-tabs {
+          .studio {
+            background-color: transparent;
+            border-top: 2px solid $dark_grey;
+            border-right: 2px solid $dark_grey;
+            border-left: 2px solid $dark_grey;
+
+            p {
+              color: $orange;
+            }
+          }
+
+          .warehouse {
+            cursor: pointer;
+            background-color: $grey;
+            border-bottom: 2px solid $dark_grey;
+            border-right: 1px solid $light_grey;
+            border-top: 1px solid $light_grey;
+          }
+        }
+
+        #studio {
+          @include db;
+        }
+
+        #warehouse {
+          @include dn;
+        }
+      }
+
+      &.warehouse {
+        #location-tabs {
+          .studio {
+            cursor: pointer;
+            background-color: $grey;
+            border-bottom: 2px solid $dark_grey;
+            border-left: 1px solid $light_grey;
+            border-top: 1px solid $light_grey;
+          }
+
+          .warehouse {
+            background-color: transparent;
+            border-top: 2px solid $dark_grey;
+            border-right: 2px solid $dark_grey;
+            border-left: 2px solid $dark_grey;
+
+            p {
+              color: $orange;
+            }
+          }
+        }
+
+        #studio {
+          @include dn;
+        }
+
+        #warehouse {
+          @include db;
+        }
+      }
+
+      .locations {
+        border-left: 2px solid $dark_grey;
+        border-right: 2px solid $dark_grey;
+        border-bottom: 2px solid $dark_grey;
+      }
+
+      .location {
+        @include prdb;
+        @include box-sizing;
+
+        width: 850px;
+        height: auto;
+        margin: auto;
+        padding: 0;
+        background-color: transparent;
+        overflow: hidden;
+
+        .address {
+          @include prdb;
+
+          width: 300px;
+          height: auto;
+          margin: 30px auto;
+
+          .location-title {
+            @include prdb;
+
+            color: $dark_grey;
+            margin-top: 0;
+          }
+
+          p:first-child {
+            white-space: pre;
+          }
+
+          p,
+          a {
+            color: $dark-grey;
+            line-height: 1.3rem;
+          }
+        }
+
+        .image,
+        .map {
+          @include prdib;
+          @include box-sizing;
+
+          vertical-align: top;
+          background-size: cover;
+          background-position: center;
+          margin: 0 0 30px;
+          height: 340px;
+        }
+
+        .image {
+          width: 300px;
+        }
+
+        .map {
+          @include prdib;
+
+          width: 550px;
+          background-size: cover;
+          background-position: center;
+
+          img {
+            @include dn;
+          }
+        }
+      }
+    }
+
+    #social {
+      @include prdb;
+
+      height: auto;
+
+      .social-wrap {
+        @include prdb;
+
+        margin: auto;
+        width: 300px;
+        height: auto;
+
+        #brochure {
+          margin-bottom: 100px;
+
+          &:hover {
+            p {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .social-links,
+        .button {
+          @include prdb;
+        }
+      }
+    }
+  }
+}

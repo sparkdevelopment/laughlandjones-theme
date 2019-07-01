@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Sweet";
+  src: url("../../resources/assets/fonts/sweetsans-regular-webfont-af589a7b4c5ddc7a6c65af1c5a042a148c950dac2a17fff9591c03fde3508a7c.eot");
+  src: url("../../resources/assets/fonts/sweetsans-regular-webfont-af589a7b4c5ddc7a6c65af1c5a042a148c950dac2a17fff9591c03fde3508a7c.eot?#iefix") format("embedded-opentype"), url("../../resources/assets/fonts/sweetsans-regular-webfont-127c0a49ef4028149debdd507120ff319c7143cd76e720a21dde246b1f4c7030.woff2") format("woff2"), url("../../resources/assets/fonts/sweetsans-regular-webfont-2f44f0802fa36f1568a41dad887f28c25b63c2ac27706024e54666d1b09ff42c.woff") format("woff"), url("../../resources/assets/fonts/sweetsans-regular-webfont-3a3d265f8f0b2910f1df4cdaa44e4f5b4b264016606e0ed51c03e04a3f43c56a.ttf") format("truetype"), url("../../resources/assets/fonts/sweetsans-regular-webfont-51f958b291888142ab19520bc542525073c9ff6266d66e245fbd81eb1fb3b9e7.svg#sweet_sansregular") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+.page {
+  .orange {
+    color: #dd7a39;
+  }
+}

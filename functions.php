@@ -8,10 +8,14 @@
  * across separate files in the `/src` directory.
  */
 
+require_once 'vendor/autoload.php';
+
 require_once 'src/styles.php';
 require_once 'src/scripts.php';
 
+require_once 'src/admin.php';
 require_once 'src/navs.php';
 require_once 'src/supports.php';
 require_once 'src/post-types.php';
 require_once 'src/thumbnails.php';
+require_once 'src/taxonomies.php';

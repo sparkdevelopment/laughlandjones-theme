@@ -5,10 +5,10 @@
  * ------------------------------------------------------------------------
  * This file is for registering your theme's scripts. In here you
  * should also deregister all unwanted assets which can be
- * shiped with various third-parity plugins.
+ * shipped with various third-parity plugins.
  */
 
-if ( ! function_exists( 'tonik_register_scripts' ) ) {
+if ( ! function_exists( 'lj_register_scripts' ) ) {
 	/**
 	 * Registers theme's JavaScript scripts.
 	 *
@@ -17,8 +17,11 @@ if ( ! function_exists( 'tonik_register_scripts' ) ) {
 	 *
 	 * @return void
 	 */
-	function tonik_register_scripts() {
-		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/public/js/main.js', array( 'jquery' ), null, true );
+	function lj_register_scripts() {
+		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/public/js/main.js', array( 'jquery','swiper' ), null, true );
+		wp_enqueue_script( 'swiper', get_template_directory_uri() . '/node_modules/swiper/dist/js/swiper.min.js', array( 'jquery' ), null, true );
+		wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/node_modules/lazysizes/lazysizes.min.js', array(), null, true );
+		wp_enqueue_script( 'lazysizes.unveilhooks', get_template_directory_uri() . '/node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js', array( 'lazysizes' ), null, true );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'tonik_register_scripts' );
+add_action( 'wp_enqueue_scripts', 'lj_register_scripts' );

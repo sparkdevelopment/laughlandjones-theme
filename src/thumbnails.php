@@ -18,6 +18,12 @@ if ( ! function_exists( 'tonik_register_thumbnails' ) ) {
 	 */
 	function tonik_register_thumbnails() {
 		add_image_size( 'custom-thumbnail', 800, 600, true );
+		add_image_size( 'lj-home-mobile-p', 400, 600, true );
+		add_image_size( 'lj-home-mobile-l', 800, 533, true );
+		add_image_size( 'lj-home-retina-p', 900, 1350, true );
+		add_image_size( 'lj-home-retina-l', 1750, 1167, true );
+		add_image_size( 'lj-team-mobile', 250, 700, true );
+		add_image_size( 'lj-team-retina', 500, 1400, true );
 	}
 }
 add_action( 'after_setup_theme', 'tonik_register_thumbnails' );

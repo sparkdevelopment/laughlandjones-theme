@@ -4,6 +4,7 @@
     Provide installation path to the WordPress Coding Standards.
   -->
   <config name="installed_paths" value="vendor/wp-coding-standards/wpcs" />
+  <config name="standard" value="WordPress-Extra" />
 
   <!--
     Check only files with .php extension.
@@ -26,7 +27,7 @@
   <!--
     Extend WordPress Coding Standard ruleset.
   -->
-  <rule ref="WordPress-Extra" />
+  <!-- <rule ref="WordPress-Extra" /> -->
 
   <!--
     Check for valid text-domains provided in the $text_domain property.

@@ -1,0 +1,43 @@
+.page-header {
+  margin: 40px auto;
+  text-align: center;
+  padding: 0;
+
+  em {
+    font-style: normal;
+    font-size: 1rem;
+    position: relative;
+    display: block;
+    margin: 1.1rem auto;
+    text-transform: none;
+    padding: 0;
+  }
+}
+
+@media all and (max-width: 991px) {
+  header {
+    display: none;
+  }
+}
+
+@media all and (min-width: 992px) {
+  header {
+    position: fixed;
+    display: block;
+    z-index: 1000 !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    background-color: #66686a;
+
+    img {
+      position: absolute;
+      display: block;
+      right: 30px;
+      top: 10px;
+      width: 140px;
+    }
+  }
+}

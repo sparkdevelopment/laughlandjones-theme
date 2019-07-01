@@ -14,6 +14,8 @@
 	<title><?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?></title>
 	<?php wp_head(); ?>
 </head>
-	<body <?php body_class(); ?>>
 
+<body <?php body_class(); ?>>
+	<?php get_template_part( 'resources/templates/parts/parts', 'subscribe-modal' ); ?>
+	<?php get_template_part( 'resources/templates/parts/parts', 'subscribe' ); ?>
 	<?php get_template_part( 'resources/templates/parts/parts', 'header' ); ?>

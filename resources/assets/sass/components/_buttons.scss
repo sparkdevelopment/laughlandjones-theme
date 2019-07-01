@@ -1,0 +1,86 @@
+.button {
+  position: relative;
+  display: block;
+  height: 44px;
+  transition: .6s ease opacity;
+
+  button,
+  p {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  p {
+    line-height: 44px;
+    text-align: center;
+    pointer-events: none;
+    margin: 0;
+  }
+
+  .button button {
+    pointer-events: none;
+    transition: .3s ease border-color, .3s ease background-color;
+  }
+
+  &.orange {
+    p {
+      color: white;
+    }
+
+    button {
+      background-color: #dd7a39;
+    }
+  }
+
+  &.outline {
+    p {
+      color: #66686a;
+    }
+
+    button {
+      border: 1px solid #9e9d9b;
+      background: transparent;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    user-select: none;
+
+    button {
+      background-color: #c79876;
+    }
+  }
+}
+
+@media all and (min-width: 992px) {
+  .button {
+    position: relative;
+    display: block;
+    margin: auto;
+
+    &:hover {
+      p {
+        text-decoration: underline;
+      }
+    }
+
+    .outline button {
+      border-color: #66686a;
+      background-color: #d5d5d6;
+    }
+  }
+}
+
+@media all and (max-width: 991px) {
+  .button {
+    width: 100%;
+    max-width: 350px;
+  }
+}

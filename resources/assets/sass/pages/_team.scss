@@ -1,0 +1,496 @@
+#who {
+  p {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .andrew-and-russell {
+    position: relative;
+    display: block;
+    width: 290px;
+    background-image: url("../../resources/assets/images/andrew-russell.jpg");
+    background-size: 100% auto;
+    background-position: center top;
+    height: 144px;
+    margin: 2rem auto;
+
+    .andrew-and-russell__caption {
+      position: absolute;
+      display: block;
+      bottom: 0;
+      right: 0;
+      padding: 15px;
+      color: white;
+      margin: 0;
+      text-align: right;
+      font-size: .9rem;
+      text-shadow: 0 0 2px rgba(0, 0, 0, .8);
+    }
+  }
+
+  #employees-list {
+    position: relative;
+    display: block;
+    width: 290px;
+    margin: auto;
+
+    .employee {
+      position: relative;
+      display: inline-block;
+      width: 140px;
+      margin: 0 10px 10px 0;
+      vertical-align: top;
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .image {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 196px;
+        background-position: center top;
+        background-size: cover;
+      }
+
+      .name {
+        position: relative;
+        display: block;
+        margin: 10px auto;
+        font-size: .9rem;
+
+        em {
+          font-style: normal;
+          color: #343536;
+          text-transform: none;
+          font-size: .8rem;
+        }
+      }
+
+      h1,
+      p {
+        text-align: center;
+      }
+
+      .copy {
+        display: none;
+      }
+
+      .links {
+        display: none;
+      }
+    }
+  }
+
+  .social-links {
+    position: relative;
+    display: block;
+    height: 44px;
+    width: 217px;
+    margin: 40px auto;
+    text-align: center;
+
+    a {
+      position: relative;
+      display: inline-block;
+      background-image: url("../../resources/assets/images/channel-logos.png");
+      background-size: 161px 42px;
+      height: 41px;
+      margin-right: 15px;
+      transition: .6s ease transform;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .twitter {
+      background-position: 0 0;
+      width: 44px;
+    }
+
+    .instagram {
+      background-position: -45px 0;
+      width: 39px;
+    }
+
+    .linkedin {
+      background-position: -86px 0;
+      width: 38px;
+    }
+
+    .pinterest {
+      background-position: -125px 0;
+      width: 37px;
+    }
+  }
+
+  button {
+    margin: 0 auto 50px;
+  }
+}
+
+#company-numbers {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.company-numbers {
+  &__item {
+    position: relative;
+    display: block;
+    flex-basis: 50%;
+    width: 50%;
+    text-align: center;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    border: 1px solid white;
+  }
+
+  &__number {
+    color: #dd7a39;
+    font-size: 18px;
+  }
+
+  &__metric {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #66686a;
+  }
+}
+
+#mobile-more {
+  position: fixed;
+  display: none;
+  z-index: 995 !important;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #66686a;
+  transform: translateX(100%);
+
+  .emp-close-button {
+    position: absolute;
+    display: block;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    z-index: 1000 !important;
+  }
+
+  .content {
+    position: relative;
+    display: block;
+    width: 90%;
+    margin: 30px auto 0;
+
+    .image {
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 140px;
+      background-size: 100px auto;
+      background-position: 0 -140px;
+      float: left;
+    }
+
+    .top {
+      position: relative;
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      height: 140px;
+      margin: auto;
+      overflow: hidden;
+
+      .name {
+        position: absolute;
+        display: block;
+        bottom: 40px;
+        left: 110px;
+        font-size: 1.1rem;
+        margin: 0;
+
+        em {
+          font-size: .9rem;
+        }
+      }
+
+      .links {
+        position: absolute;
+        display: block;
+        bottom: 0;
+        left: 110px;
+        height: 30px;
+        width: 91px;
+        margin: 10px 0 0;
+        clear: both;
+
+        a {
+          position: relative;
+          display: inline-block;
+          height: 30px;
+          overflow: hidden;
+          background-image: url("../../resources/assets/images/emp-contact-cfa75cf8df9bee7a18fc940a73f5c4f093769e7157b670fefab4b043f4b965e4.png");
+          background-size: 79px 64px;
+          background-repeat: no-repeat;
+        }
+
+        .employee-linkedin {
+          background-position: 0 0;
+          width: 33px;
+          margin-right: 10px;
+
+          &.hide {
+            display: none;
+          }
+        }
+
+        .employee-email {
+          background-position: -35px 0;
+          width: 44px;
+        }
+      }
+    }
+
+    .copy {
+      position: relative;
+      display: block;
+      margin-top: 1.5rem;
+      text-align: left;
+      overflow-y: visible;
+      font-size: .8rem;
+    }
+  }
+}
+
+@media all and (min-height: 420px) {
+  #mobile-more .content {
+    margin: 60px auto 0;
+  }
+}
+
+@media all and (min-width: 420px) {
+  #mobile-more {
+    .content {
+      .image {
+        width: 140px;
+        height: 196px;
+        background-size: 140px 392px;
+        background-position: 0 -196px;
+      }
+
+      .top {
+        position: relative;
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        height: 196px;
+        margin: auto;
+        padding-left: 150px;
+
+        .name {
+          left: 150px;
+        }
+
+        .links {
+          left: 150px;
+        }
+      }
+    }
+
+    .copy {
+      margin-top: 30px !important;
+      font-size: 1rem !important;
+    }
+  }
+}
+
+@media all and (min-width: 768px) {
+  #who {
+    .andrew-and-russell {
+      width: 460px;
+      height: 227px;
+    }
+
+    #employees-list {
+      width: 460px;
+
+      .employee {
+        margin: 0 20px 20px 0;
+
+        &:nth-child(even) {
+          margin-right: 20px;
+        }
+
+        &:nth-child(3n+3) {
+          margin-right: 0;
+        }
+
+        .image {
+          height: 180px;
+        }
+      }
+    }
+  }
+
+  .company-numbers {
+    margin: auto;
+    max-width: 1060px;
+
+    &__item {
+      flex-basis: 33.333%;
+      width: 33.333%;
+      padding: 20px 15px;
+    }
+
+    &__number {
+      color: #dd7a39;
+      font-size: 25px;
+    }
+
+    &__metric {
+      font-size: 16px;
+    }
+  }
+}
+
+@media all and (min-width: 992px) {
+  #who {
+    .andrew-and-russell {
+      background-image: url("../../resources/assets/images/andrew-russell.jpg");
+      width: 1060px;
+      height: 526px;
+      background-position: 0 0;
+      transition: .7s ease background-position;
+
+      &:hover {
+        background-position: 0 -527px;
+      }
+    }
+
+    #send-cv {
+      width: 100px;
+      margin: 50px auto 150px;
+    }
+
+    #employees-list {
+      width: 1060px;
+
+      .employee {
+        width: 250px;
+        background-size: 250px 700px;
+
+        &:nth-child(even) {
+          margin-right: 20px;
+        }
+
+        &:nth-child(3n+3) {
+          margin-right: 20px;
+        }
+
+        &:nth-child(4n+4) {
+          margin-right: 0 !important;
+        }
+
+        .image {
+          height: 350px;
+          transition: 1s ease background-position;
+        }
+
+        .name {
+          margin-top: 15px;
+          font-size: 1.1rem;
+        }
+
+        .copy {
+          position: relative;
+          display: block;
+          font-size: .8rem !important;
+          margin-bottom: 25px;
+        }
+
+        .links {
+          position: relative;
+          display: block;
+          width: 47px;
+          margin: auto;
+
+          &.single {
+            width: 24px;
+
+            .employee-linkedin {
+              display: none;
+            }
+          }
+
+          a {
+            position: relative;
+            display: inline-block;
+            margin: auto;
+            height: 17px;
+            background-image: url("../../resources/assets/images/emp-contact.png");
+            background-size: 44px auto;
+            background-repeat: no-repeat;
+          }
+
+          .employee-linkedin {
+            width: 18px;
+            background-position: 0 -18px;
+          }
+
+          .employee-email {
+            width: 24px;
+            background-position: -20px -18px;
+          }
+        }
+      }
+    }
+  }
+
+  #mobile-more .emp-close-button {
+    position: absolute;
+    display: block;
+    top: 70px;
+  }
+}
+
+@media all and (min-width: 992px) and (max-width: 1024px) {
+  #who #employees-list {
+    width: 900px;
+
+    .employee {
+      width: 210px;
+      background-size: 210px 563px;
+
+      .image {
+        height: 281.5px;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 992px) and (min-width: 1025px) {
+  #who #employees-list .employee .image:hover {
+    background-position: 0 -350px;
+  }
+}

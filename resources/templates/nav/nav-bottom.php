@@ -10,6 +10,7 @@
 	<?php
 		wp_nav_menu( array(
 			'theme_location' => 'bottom',
+			'menu_id'        => 'menu',
 		) );
 	?>
 </nav>

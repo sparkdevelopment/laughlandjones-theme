@@ -1,0 +1,228 @@
+#in-progress {
+  @include prdb;
+  @include box-sizing;
+
+  padding-left: 5%;
+  padding-right: 5%;
+
+  #in-progress-items {
+    @include prdb;
+
+    width: 100%;
+    height: auto;
+
+    .project-table__label {
+      color: $orange;
+      padding-right: 30px;
+      vertical-align: top;
+    }
+
+    .project-item {
+      @include prdb;
+
+      width: 100%;
+      margin-bottom: 2rem;
+
+      .keyline {
+        width: 100%;
+        margin: 1rem 0 0;
+      }
+
+      &:last-child {
+        margin-bottom: 100px;
+
+        .keyline {
+          @include dn;
+        }
+      }
+
+      .item-content {
+        @include prdb;
+
+        height: 100%;
+        text-decoration: none;
+        color: $dark_grey;
+
+        &:hover,
+        &:active,
+        &:visited {
+          text-decoration: none;
+          color: $dark_grey;
+        }
+
+        .copy {
+          @include prdb;
+          @include box-sizing;
+
+          padding: 15px;
+          width: 100%;
+          height: auto;
+
+          h3,
+          p {
+            margin: 0;
+          }
+
+          .title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            color: $orange;
+          }
+
+          .location {
+            font-style: italic;
+            font-size: .9rem;
+            margin: 1rem auto;
+          }
+
+          .trunc-copy {
+            margin-top: .5rem;
+          }
+        }
+      }
+    }
+  }
+
+  .panel {
+    @include prdb;
+
+    width: 100%;
+  }
+
+  .panel__left--grey {
+    @include dn;
+  }
+}
+
+// MOBILE
+@media all and (max-width: 767px) {
+  #in-progress {
+    #in-progress-items {
+      .project-item {
+        @include prdb;
+
+        width: 100%;
+
+        .item-content {
+          @include prdb;
+
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+// DESKTOP
+@media all and (min-width: 992px) {
+  #in-progress {
+    min-height: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    margin: auto;
+
+    .panel__left--grey {
+      @include pfdb;
+
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 40%;
+      background: $dark_grey;
+    }
+
+    .panel__logo {
+      @include padb;
+
+      bottom: 100px;
+      width: 230px;
+      right: 25px;
+      height: auto;
+    }
+
+    .panel__right {
+      @include prdb;
+      @include box-sizing;
+
+      width: 60%;
+      margin-left: 40%;
+      padding: 0 50px;
+    }
+
+    .page-header:not(.page-header--empty) {
+      text-align: left !important;
+      margin-top: 70px;
+      margin-bottom: 70px;
+    }
+
+    #in-progress-items {
+      @include prdb;
+
+      width: 100%;
+      margin-bottom: 100px;
+
+      .project-item {
+        @include prdb;
+
+        width: 100%;
+        margin: 0;
+
+        .keyline {
+          width: 100%;
+          margin: 3rem 0;
+        }
+
+        .item-content {
+          @include prdb;
+
+          height: auto;
+          overflow: hidden;
+
+          .copy {
+            @include prdb;
+            @include box-sizing;
+
+            padding: 0;
+            width: 50%;
+            height: auto;
+            background-color: transparent;
+            margin: 0;
+
+            .copy-item {
+              margin: 1rem auto;
+            }
+
+            h3,
+            p {
+              margin: 0;
+              color: $dark_grey;
+            }
+
+            .title {
+              font-size: 1rem;
+              text-transform: uppercase;
+              margin-bottom: 5px;
+            }
+
+            .location {
+              font-style: italic;
+              font-size: 1rem;
+            }
+
+            .full-copy {
+              @include db;
+
+              margin-top: .5rem;
+            }
+
+            &.trunc-copy {
+              @include dn;
+            }
+          }
+        }
+      }
+    }
+  }
+}

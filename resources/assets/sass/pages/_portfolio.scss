@@ -1,0 +1,362 @@
+#portfolio {
+  @include prdb;
+
+  .scroll-buttons {
+    @include dn;
+  }
+
+  .projects-list-wrap {
+    @include prdb;
+
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin: auto;
+
+    #projects {
+      @include prdb;
+      @include box-sizing;
+
+      width: 100%;
+      height: auto;
+
+      .project {
+        @include prdb;
+        @include box-sizing;
+
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 5%;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        .image-window {
+          @include prdb;
+
+          height: 100%;
+          width: 100%;
+          background-size: cover;
+          background-position: center;
+
+          .image {
+            @include prdb;
+            @include transform-origin(50% 50%);
+
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: .5s ease opacity, 1s ease transform;
+            margin-bottom: 2px;
+
+            &.lazyload {
+              @include opacityz(0);
+
+              transform: scale(.9);
+            }
+
+            &.lazyloaded {
+              @include opacityz(1);
+
+              transform: scale(1);
+            }
+          }
+        }
+
+        .copy {
+          @include padb;
+
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+          background-color: rgba(0, 0, 0, .6);
+
+          h2,
+          p {
+            @include prdb;
+
+            color: white;
+            text-align: left;
+            padding: 0 5%;
+          }
+
+          .project-blurb {
+            @include dn;
+          }
+
+          h2 {
+            text-transform: uppercase;
+            margin: 20px 0 0;
+          }
+
+          p {
+            @include prdib;
+
+            width: 80%;
+            margin: 0 0 20px;
+          }
+
+          img {
+            @include padb;
+
+            right: 5%;
+            height: 40px;
+            top: 50%;
+            margin: -20px 0 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 320px) {
+  #portfolio .projects-list-wrap #projects .project {
+    height: 300px;
+  }
+}
+
+@media all and (min-width: 321px) {
+  #portfolio .projects-list-wrap #projects .project {
+    height: 380px;
+  }
+}
+
+@media all and (min-width: 480px) {
+  #portfolio .projects-list-wrap #projects .project {
+    height: 420px;
+  }
+}
+
+// MOBILE
+@media all and (max-width: 780px) {
+  #portfolio {
+    .projects-list-wrap {
+      max-width: 600px;
+
+      #projects {
+        .project {
+          background-size: cover;
+          background-position: center;
+        }
+      }
+    }
+  }
+}
+
+// TABLET
+@media all and (max-width: 992px) {
+  #portfolio {
+    .projects-list-wrap {
+      max-width: 600px;
+    }
+  }
+}
+
+// DESKTOP
+@media all and (min-width: 992px) {
+  #portfolio {
+    @include prdb;
+
+    height: 100%;
+    width: 100%;
+
+    h1:not(.show) {
+      @include dn;
+    }
+
+    .scroll-buttons {
+      @include padb;
+      @include highness;
+      @include opacityz(.5);
+
+      background-size: 20px 38px;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100%;
+      width: 50px;
+      cursor: pointer;
+      transition: .3s ease opacity;
+
+      &:hover {
+        @include opacityz(1);
+      }
+
+      &#left {
+        @include opacityz(0);
+
+        left: 0;
+        background-image: url("../../resources/assets/images/arrow-left2.png");
+      }
+
+      &#right {
+        right: 0;
+        background-image: url("../../resources/assets/images/arrow-right2.png");
+      }
+    }
+
+    .projects-list-wrap {
+      @include prdb;
+
+      height: 100%;
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      overflow-y: hidden;
+      white-space: nowrap;
+      padding: 0;
+      width: 100%;
+      margin: 0;
+
+      @media all and (min-height: 650px) {
+        margin: 3% 0 0;
+      }
+
+      @media all and (min-height: 750px) {
+        margin: 5% 0 0;
+      }
+
+      #projects {
+        @include prdb;
+
+        height: 100%;
+        width: auto;
+        padding: 0;
+        margin: 0;
+        *display: inline;
+        *zoom: 1;
+
+        .project {
+          @include prdib;
+
+          cursor: pointer;
+          margin: 0 4px 0 0;
+          height: 100%;
+          min-height: 100%;
+          vertical-align: top;
+
+          &::after {
+            @include prdb;
+
+            content: "";
+            width: 1px;
+            height: 1px;
+            clear: both;
+          }
+
+          &.landscape {
+            width: 45%;
+          }
+
+          &.portrait {
+            width: 25%;
+          }
+
+          // TODO FIx this mess
+          .image-window {
+            @include prdb;
+
+            width: 100%;
+            height: 60%;
+            overflow: hidden;
+            background-image: none;
+
+            .image {
+              @include padb;
+
+              height: 100%;
+              width: 100%;
+              top: 0;
+              left: 0;
+              background-position: center;
+              background-size: cover;
+              transition: 2s ease transform;
+            }
+          }
+
+          .copy {
+            @include prdb;
+            @include box-sizing;
+
+            padding: 0 20px;
+            background: transparent;
+
+            img {
+              @include dn;
+            }
+
+            h2,
+            p {
+              @include prdb;
+
+              white-space: normal;
+              width: 100%;
+              max-width: 400px;
+              padding: 0;
+            }
+
+            h2 {
+              margin-top: 10px;
+              font-size: 1.1rem;
+              color: $orange;
+              transition: .6s ease color;
+            }
+
+            p {
+              color: $dark_grey;
+            }
+
+            .cli-location {
+              margin: 10px 0 0;
+              font-style: italic;
+              font-size: .8rem;
+            }
+
+            .project-blurb {
+              @include prdb;
+
+              margin-top: 10px;
+              font-size: .8rem;
+            }
+
+            &.hover-reveal {
+              h2 {
+                color: $dark_grey;
+              }
+
+              p {
+                @include opacityz(0);
+
+                transition: 1s ease opacity, 1s ease transform;
+                transform: translateY(10px);
+              }
+            }
+          }
+
+          &:hover {
+            .image-window {
+              .image {
+                transform: scale(1.1);
+              }
+            }
+
+            .copy {
+              h2 {
+                color: $orange;
+              }
+
+              p {
+                @include opacityz(1);
+
+                transform: translateY(0);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

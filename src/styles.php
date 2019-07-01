@@ -5,7 +5,7 @@
  * ------------------------------------------------------------------------
  * This file is for registering your theme's stylesheets. In here you
  * should also deregister all unwanted assets which can be
- * shiped with various third-parity plugins.
+ * shipped with various third-parity plugins.
  */
 
 if ( ! function_exists( 'tonik_register_styles' ) ) {
@@ -19,6 +19,7 @@ if ( ! function_exists( 'tonik_register_styles' ) ) {
 	 */
 	function tonik_register_styles() {
 		wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/public/css/app.css' );
+		wp_enqueue_style( 'swiper', get_template_directory_uri() . '/node_modules/swiper/dist/css/swiper.min.css' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'tonik_register_styles' );

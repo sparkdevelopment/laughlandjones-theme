@@ -1,0 +1,160 @@
+@mixin box-sizing {
+  box-sizing: border-box;
+}
+
+@mixin no-select {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+@mixin no-pointer-events {
+  pointer-events: none;
+}
+
+@mixin prdb {
+  position: relative;
+  display: block;
+}
+
+@mixin prdt {
+  position: relative;
+  display: table;
+}
+
+@mixin prdtc {
+  position: relative;
+  display: table-cell;
+}
+
+@mixin prdn {
+  position: relative;
+  display: none;
+}
+
+@mixin prdib {
+  position: relative;
+  display: inline-block;
+}
+
+@mixin padb {
+  position: absolute;
+  display: block;
+}
+
+@mixin padn {
+  position: absolute;
+  display: none;
+}
+
+@mixin pa {
+  position: absolute;
+}
+
+@mixin pfdb {
+  position: fixed;
+  display: block;
+}
+
+@mixin pfdt {
+  position: fixed;
+  display: table;
+}
+
+@mixin pfdn {
+  position: fixed;
+  display: none;
+}
+
+@mixin pr {
+  position: relative;
+}
+
+@mixin db {
+  display: block;
+}
+
+@mixin dib {
+  display: inline-block;
+}
+
+@mixin pf {
+  position: fixed;
+}
+
+@mixin dn {
+  display: none;
+}
+
+@mixin box-shadow($top, $left, $blur, $spread, $rgba) {
+  box-shadow: $top $left $blur $spread $rgba;
+}
+
+@mixin text-shadow($top, $left, $blur, $rgba) {
+  text-shadow: $top $left $blur $rgba;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin transform-origin($origin) {
+  transform-origin: $origin;
+}
+
+@mixin transformz($transform) {
+  transform: $transform;
+}
+
+@mixin perspective($perspective) {
+  perspective: $perspective;
+}
+
+@mixin preserve3d {
+  transform-style: preserve-3d;
+}
+
+@mixin backface-vis($val) {
+  backface-visibility: $val;
+}
+
+@mixin transitionz($transition) {
+  transition: $transition;
+}
+
+@mixin opacityz($opacity) {
+  opacity: $opacity;
+}
+
+@mixin middle-align($height) {
+  vertical-align: middle;
+  line-height: $height;
+}
+
+@mixin blurz($blurz) {
+  filter: blur($blurz);
+}
+
+@mixin highness {
+  z-index: 995 !important;
+}
+
+@mixin nearly-ontop {
+  z-index: 999 !important;
+}
+
+@mixin ontop {
+  z-index: 1000 !important;
+}
+
+@mixin ontop-absolute {
+  z-index: 9999 !important;
+}
+
+@mixin cover {
+  @include padb;
+
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
