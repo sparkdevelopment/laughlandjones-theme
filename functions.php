@@ -8,7 +8,7 @@
  * across separate files in the `/src` directory.
  */
 
-require_once 'vendor/autoload.php';
+require_once get_stylesheet_directory() . '/vendor/autoload.php';
 
 require_once 'src/styles.php';
 require_once 'src/scripts.php';
