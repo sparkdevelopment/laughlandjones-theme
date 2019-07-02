@@ -4,6 +4,7 @@
   "type": "wordpress-theme",
   "require": {
     "php": ">=5.2.4",
+    "composer/installers": "v1.0.12",
     "mobiledetect/mobiledetectlib": "^2.8",
     "cmb2/cmb2": "dev-master"
   },
