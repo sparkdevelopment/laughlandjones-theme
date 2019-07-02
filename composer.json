@@ -4,16 +4,12 @@
   "type": "wordpress-theme",
   "require": {
     "php": ">=5.2.4",
-    "composer/installers": "v1.0.12",
     "mobiledetect/mobiledetectlib": "^2.8",
     "cmb2/cmb2": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.*",
     "wp-coding-standards/wpcs": "0.14.*"
-  },
-  "autoload": {
-    "files": ["vendor/cmb2/cmb2/init.php"]
   },
   "scripts": {
     "lint": [
