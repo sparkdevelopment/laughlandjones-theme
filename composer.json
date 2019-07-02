@@ -11,6 +11,9 @@
     "squizlabs/php_codesniffer": "3.*",
     "wp-coding-standards/wpcs": "0.14.*"
   },
+  "autoload": {
+    "files": ["vendor/cmb2/cmb2/init.php"]
+  },
   "scripts": {
     "lint": [
       "phpcs --standard=.phpcs.xml ./"
