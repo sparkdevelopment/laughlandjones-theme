@@ -7,7 +7,7 @@
 * @since Laughland Jones 1.0
 */
 
-require_once get_template_directory() . '/vendor/mobiledetect/mobiledetectlib/Mobile_Detect.php';
+require_once get_template_directory() . '/mobile_detect.php';
 $detect = new Mobile_Detect;
 
 $agent = $detect->isMobile() ? 'mobile' : 'retina';

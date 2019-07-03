@@ -4,7 +4,7 @@
  */
 
 // Mobile Detect init
-require_once get_template_directory() . '/vendor/mobiledetect/mobiledetectlib/Mobile_Detect.php';
+require_once get_template_directory() . '/mobile_detect.php';
 $detect = new Mobile_Detect;
 
 $projects = [
@@ -35,24 +35,26 @@ $projects = array();
 foreach ( $projects_query->posts as $project ) {
 	$project_meta = get_post_meta($project->ID);
 
-	$imgmeta = wp_get_attachment_metadata( $project_meta['photo_id'][0] );
-	$is_landscape = $imgmeta['width'] > $imgmeta['height'];
+	if ( isset( $project_meta['photo_id'] ) ) {
+		$imgmeta = wp_get_attachment_metadata( $project_meta['photo_id'][0] );
+		$is_landscape = $imgmeta['width'] > $imgmeta['height'];
 
-	$projects[] = array(
-		'slug'          => $project->post_name,
-		'title'         => $project->post_title,
-		'location'      => $project_meta['location'][0],
-		'client'        => $project_meta['client'][0],
-		'description'   => $project_meta['description'][0],
-		'feature_image' => array(
-			'orientation' => $is_landscape ? 'landscape' : 'portrait',
-			'image' => array(
-				'url' => array(
-					'normal' => wp_get_attachment_image_src( $project_meta['photo_id'][0], 'full' )[0]
+		$projects[] = array(
+			'slug'          => $project->post_name,
+			'title'         => $project->post_title,
+			'location'      => $project_meta['location'][0],
+			'client'        => $project_meta['client'][0],
+			'description'   => $project_meta['description'][0],
+			'feature_image' => array(
+				'orientation' => $is_landscape ? 'landscape' : 'portrait',
+				'image' => array(
+					'url' => array(
+						'normal' => wp_get_attachment_image_src( $project_meta['photo_id'][0], 'full' )[0]
+					)
 				)
-			)
-		),
-	);
+			),
+		);
+	}
 }
 
 ?>

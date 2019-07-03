@@ -3,8 +3,7 @@
   "description": "https://github.com/sparkdevelopment/laughlandjones-theme.git",
   "type": "wordpress-theme",
   "require": {
-    "php": ">=5.2.4",
-    "mobiledetect/mobiledetectlib": "^2.8"
+    "php": ">=5.2.4"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.*",
