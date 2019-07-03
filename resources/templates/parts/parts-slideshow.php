@@ -10,7 +10,7 @@ $photo_array = get_post_meta( get_the_ID(), 'lj_home_gallery', true );
 
 $photos = array();
 
-if ( count($photo_array) ) {
+if ( is_array( $photo_array ) ) {
 	foreach( $photo_array as $photo_id => $photo ) {
 		$imgmeta = wp_get_attachment_metadata( $photo_id );
 		$is_landscape = $imgmeta['width'] > $imgmeta['height'];
