@@ -10,15 +10,17 @@ $photo_array = get_post_meta( get_the_ID(), 'lj_home_gallery', true );
 
 $photos = array();
 
-foreach( $photo_array as $photo_id => $photo ) {
-	$imgmeta = wp_get_attachment_metadata( $photo_id );
-	$is_landscape = $imgmeta['width'] > $imgmeta['height'];
+if ( count($photo_array) ) {
+	foreach( $photo_array as $photo_id => $photo ) {
+		$imgmeta = wp_get_attachment_metadata( $photo_id );
+		$is_landscape = $imgmeta['width'] > $imgmeta['height'];
 
-	$photos[] = array(
-		'orientation' => $is_landscape ? 'landscape' : 'portrait',
-		'mobile'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-mobile-l' : 'lj-home-mobile-p' )[0],
-		'retina'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-retina-l' : 'lj-home-retina-p' )[0]
-	);
+		$photos[] = array(
+			'orientation' => $is_landscape ? 'landscape' : 'portrait',
+			'mobile'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-mobile-l' : 'lj-home-mobile-p' )[0],
+			'retina'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-retina-l' : 'lj-home-retina-p' )[0]
+		);
+	}
 }
 ?>
 
