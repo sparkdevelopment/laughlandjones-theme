@@ -63,7 +63,7 @@ var _Employees = <?php echo json_encode( $employees ) ?>;
 	<ul id="company-numbers" class="company-numbers">
 		<?php foreach ( $company_numbers as $number ) { ?>
 			<li class="company-numbers__item">
-				<span class="company-numbers__number" data-total=<?php esc_attr_e( $number['total' ]);?> data-suffix=<?php esc_attr_e( $number['suffix' ] ?: false );?>>
+				<span class="company-numbers__number" data-total=<?php esc_attr_e( $number['total' ]);?> data-suffix="<?php esc_attr_e( $number['suffix'] ?: false );?>">
 					0 <?php esc_html_e( $number['suffix'] );?>
 				</span>
 				<div class="company-numbers__metric"><?php esc_html_e( $number['text'] ); ?></div>
