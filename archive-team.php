@@ -76,8 +76,7 @@ var _Employees = <?php echo json_encode( $employees ) ?>;
 			<h3 class="andrew-and-russell__caption">ANDREW LAUGHLAND & RUSSELL JONES</h3>
 		</div>
 		<ul id="employees-list">
-			<?php foreach ( $employees as $employee ) { ?>
-				<li class="employee" data-id="<?php esc_attr_e( $employee["id"] ); ?>" data-image="<?php esc_attr_e( $employee['photo']['url']['normal'] ); ?>">
+			<?php foreach ( $employees as $employee ) { ?><li class="employee" data-id="<?php esc_attr_e( $employee["id"] ); ?>" data-image="<?php esc_attr_e( $employee['photo']['url']['normal'] ); ?>">
 					<div class="image" style="background-image: url(<?php esc_attr_e( $employee['photo']['url']['retina'] ); ?>);"></div>
 					<h1 class="name">
 						<?php esc_html_e( $employee['first_name']); ?><br>
@@ -93,8 +92,7 @@ var _Employees = <?php echo json_encode( $employees ) ?>;
 							<a href="mailto:<?php esc_attr_e( $employee['email'] ) ?>?subject=Enquiry for <?php esc_attr_e( $employee['first_name'] ) ?>" class="employee-email"></a>
 						</div>
 					<?php } ?>
-				</li>
-			<?php } ?>
+				</li><?php } ?>
 		</ul>
 	</div>
 	<div class="keyline"></div>
