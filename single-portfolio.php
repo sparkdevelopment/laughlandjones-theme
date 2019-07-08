@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Contact
+* Single Portfolio
 *
 * @package WordPress
 * @subpackage Laughland Jones
@@ -87,7 +87,7 @@ foreach ( $photo_array as $photo_id => $photo ) {
 
 	<!-- THE SWIPER -->
 	<div class="swiper-container">
-		<img src="<?php esc_attr_e( get_template_directory_uri() ) ?>/resources/assets/images/close.png" alt="" id="slideshow-close-button">
+		<img src="<?php esc_attr_e( get_template_directory_uri() ) ?>/resources/assets/images/close.png" id="slideshow-close-button">
 
 		<div id="left-arrow" class="arrows"></div>
 		<div id="right-arrow" class="arrows"></div>
@@ -96,20 +96,16 @@ foreach ( $photo_array as $photo_id => $photo ) {
 			<?php
 		while ( $i < count( $photos ) ) {
 			if ( $photos[$i]['orientation'] == 'portrait' && isset( $photos[ $i + 1 ] ) && $photos[ $i + 1 ]['orientation'] == 'portrait' ) {
-				?>
-				<div class="swiper-slide pp">
-					<div class="slide-image lazyload" data-bg="<?php echo esc_url( $agent === 'mobile' ? $photos[ $i ]['mobile'] : $photos[ $i ]['retina'] ); ?>"></div>
-					<div class="slide-image lazyload" data-bg="<?php echo esc_url( $agent === 'mobile' ? $photos[ $i + 1 ]['mobile'] : $photos[ $i + 1 ]['retina'] ); ?>"></div>
-				</div>
-				<?php
+				?><div class="swiper-slide pp">
+				<div class="slide-image lazyload" data-bg="<?php echo esc_url( $agent === 'mobile' ? $photos[ $i ]['mobile'] : $photos[ $i ]['retina'] ); ?>"></div>
+				<div class="slide-image lazyload" data-bg="<?php echo esc_url( $agent === 'mobile' ? $photos[ $i + 1 ]['mobile'] : $photos[ $i + 1 ]['retina'] ); ?>"></div>
+			</div><?php
 				$i += 2;
 			} else if ( ! isset( $photos[ $i ] ) ) {
 				break;
-			} else { ?>
-        		<div class="swiper-slide s">
-					<div class="slide-image lazyload" data-bg="<?php echo esc_url( $agent === 'mobile' ? $photos[ $i ]['mobile'] : $photos[ $i ]['retina'] ); ?>"></div>
-				</div>
-				<?php
+			} else { ?><div class="swiper-slide s">
+				<div class="slide-image lazyload" data-bg="<?php echo esc_url( $agent === 'mobile' ? $photos[ $i ]['mobile'] : $photos[ $i ]['retina'] ); ?>"></div>
+			</div><?php
 				$i += 1;
 			}
 		}

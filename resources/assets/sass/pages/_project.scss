@@ -464,47 +464,47 @@
         &:hover {
           @include opacityz(1);
         }
+      }
 
-        .arrows {
-          @include padb;
-          @include ontop;
-          @include opacityz(.6);
+      .arrows {
+        @include padb;
+        @include ontop;
+        @include opacityz(.6);
 
-          height: 80px;
-          width: 50px;
-          margin: -40px 0 0;
-          top: 50%;
-          background-position: center;
-          background-size: 40%;
-          background-repeat: no-repeat;
-          cursor: pointer;
-          transition: 1s ease transform, .4s ease opacity;
+        height: 80px;
+        width: 50px;
+        margin: -40px 0 0;
+        top: 50%;
+        background-position: center;
+        background-size: 40%;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: 1s ease transform, .4s ease opacity;
 
-          &:hover {
-            @include opacityz(1);
+        &:hover {
+          @include opacityz(1);
+        }
+
+        &:active {
+          transition: .2s ease transform;
+
+          &#left-arrow {
+            transform: translateX(-5px);
           }
 
-          &:active {
-            transition: .2s ease transform;
-
-            &#left-arrow {
-              transform: translateX(-5px);
-            }
-
-            &#right-arrow {
-              transform: translateX(5px);
-            }
+          &#right-arrow {
+            transform: translateX(5px);
           }
+        }
 
-          #left-arrow {
-            left: 0;
-            background-image: url("../../resources/assets/images/arrow-left2.png");
-          }
+        #left-arrow {
+          left: 0;
+          background-image: url("../../resources/assets/images/arrow-left2.png");
+        }
 
-          #right-arrow {
-            right: 0;
-            background-image: url("../../resources/assets/images/arrow-right2.png");
-          }
+        #right-arrow {
+          right: 0;
+          background-image: url("../../resources/assets/images/arrow-right2.png");
         }
       }
     }

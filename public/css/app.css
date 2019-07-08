@@ -1609,6 +1609,22 @@ footer {
           position: relative;
           display: block; } }
 
+#fabrics {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  color: #66686a;
+  padding: 0 30px;
+  text-align: center; }
+
 #in-progress {
   position: relative;
   display: block;
@@ -2363,42 +2379,42 @@ footer {
     transition: .3s ease opacity; }
     #project .swiper-container #slideshow-close-button:hover {
       opacity: 1; }
-    #project .swiper-container #slideshow-close-button .arrows {
-      position: absolute;
-      display: block;
-      z-index: 1000 !important;
-      opacity: 0.6;
-      height: 80px;
-      width: 50px;
-      margin: -40px 0 0;
-      top: 50%;
-      background-position: center;
-      background-size: 40%;
-      background-repeat: no-repeat;
-      cursor: pointer;
-      -webkit-transition: 1s ease transform, .4s ease opacity;
-      -o-transition: 1s ease transform, .4s ease opacity;
-      transition: 1s ease transform, .4s ease opacity; }
-      #project .swiper-container #slideshow-close-button .arrows:hover {
-        opacity: 1; }
-      #project .swiper-container #slideshow-close-button .arrows:active {
-        -webkit-transition: .2s ease transform;
-        -o-transition: .2s ease transform;
-        transition: .2s ease transform; }
-        #project .swiper-container #slideshow-close-button .arrows:active#left-arrow {
-          -webkit-transform: translateX(-5px);
-          -ms-transform: translateX(-5px);
-          transform: translateX(-5px); }
-        #project .swiper-container #slideshow-close-button .arrows:active#right-arrow {
-          -webkit-transform: translateX(5px);
-          -ms-transform: translateX(5px);
-          transform: translateX(5px); }
-      #project .swiper-container #slideshow-close-button .arrows #left-arrow {
-        left: 0;
-        background-image: url("../../resources/assets/images/arrow-left2.png"); }
-      #project .swiper-container #slideshow-close-button .arrows #right-arrow {
-        right: 0;
-        background-image: url("../../resources/assets/images/arrow-right2.png"); } }
+  #project .swiper-container .arrows {
+    position: absolute;
+    display: block;
+    z-index: 1000 !important;
+    opacity: 0.6;
+    height: 80px;
+    width: 50px;
+    margin: -40px 0 0;
+    top: 50%;
+    background-position: center;
+    background-size: 40%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    -webkit-transition: 1s ease transform, .4s ease opacity;
+    -o-transition: 1s ease transform, .4s ease opacity;
+    transition: 1s ease transform, .4s ease opacity; }
+    #project .swiper-container .arrows:hover {
+      opacity: 1; }
+    #project .swiper-container .arrows:active {
+      -webkit-transition: .2s ease transform;
+      -o-transition: .2s ease transform;
+      transition: .2s ease transform; }
+      #project .swiper-container .arrows:active#left-arrow {
+        -webkit-transform: translateX(-5px);
+        -ms-transform: translateX(-5px);
+        transform: translateX(-5px); }
+      #project .swiper-container .arrows:active#right-arrow {
+        -webkit-transform: translateX(5px);
+        -ms-transform: translateX(5px);
+        transform: translateX(5px); }
+    #project .swiper-container .arrows #left-arrow {
+      left: 0;
+      background-image: url("../../resources/assets/images/arrow-left2.png"); }
+    #project .swiper-container .arrows #right-arrow {
+      right: 0;
+      background-image: url("../../resources/assets/images/arrow-right2.png"); } }
 
 #who p {
   position: relative;

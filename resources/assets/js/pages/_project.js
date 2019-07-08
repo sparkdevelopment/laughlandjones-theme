@@ -57,9 +57,11 @@ class Project {
       this.swiper = new Swiper(this.slideshow, {
         spaceBetween: 0,
         loop: true,
-        autoplay: 5000,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
         speed: 600,
-        autoplayDisableOnInteraction: false,
         observer: true
       })
     } else {
@@ -67,11 +69,15 @@ class Project {
         spaceBetween: 30,
         effect: 'fade',
         loop: true,
-        autoplay: 5000,
-        nextButton: this.right,
-        prevButton: this.left,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false
+        },
+        navigation: {
+          nextEl: this.right,
+          prevEl: this.left
+        },
         speed: 600,
-        autoplayDisableOnInteraction: false,
         observer: true
       })
     }
