@@ -29,6 +29,7 @@ if ( have_posts() ) {
 		$in_progresses[] = [
 			'title' => $post->post_title,
 			'location' => $post->location,
+			'architecture' => $post->architecture,
 			'client' => $post->client,
 			'geography' => $post->geography,
 			'size' => $post->size,
@@ -88,6 +89,7 @@ function lj_output_portfolio_row( $field = null, $label = null, $project = null 
 								<table>
 									<?php lj_output_portfolio_row('client','Client',$project); ?>
 									<?php lj_output_portfolio_row('geography','Geography',$project); ?>
+									<?php lj_output_portfolio_row('architecture','Architecture',$project); ?>
 									<?php lj_output_portfolio_row('size','Size',$project); ?>
 									<?php lj_output_portfolio_row('architect','Architect',$project); ?>
 									<?php lj_output_portfolio_row('interior_architecture','Interior Architecture',$project); ?>

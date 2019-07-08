@@ -35,6 +35,12 @@ function lj_add_portfolio_metaboxes() {
 	) );
 
 	$metabox->add_field( array(
+		'name' => __( 'Architecture', 'lj' ),
+		'id'   => 'architecture',
+		'type' => 'text_medium',
+	) );
+
+	$metabox->add_field( array(
 		'name' => __( 'Size', 'lj' ),
 		'id'   => 'size',
 		'type' => 'text_medium',
