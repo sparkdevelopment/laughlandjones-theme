@@ -11,7 +11,7 @@ add_action( 'admin_init', 'hide_editor' );
 function hide_editor() {
 	// Set pages
 	$pages = [];
-	$templates =['template-home.php','template-our-approach.php','template-contact.php'];
+	$templates =['template-home.php','template-our-approach.php','template-contact.php','template-fabrics.php'];
 
 	// Get the Post ID
 	$post_id = isset( $_GET['post'] ) ? $_GET['post'] : ( isset( $_POST['post_ID'] ) ? $_POST['post_ID'] : null );
