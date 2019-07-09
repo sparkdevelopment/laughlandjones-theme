@@ -49,7 +49,7 @@ foreach ( $projects_query->posts as $project ) {
 				'orientation' => $is_landscape ? 'landscape' : 'portrait',
 				'image' => array(
 					'url' => array(
-						'normal' => wp_get_attachment_image_src( $project_meta['photo_id'][0], 'full' )[0]
+						'normal' => wp_get_attachment_image_src( $project_meta['photo_id'][0], $is_landscape ? 'lj-portfolio-l' : 'lj-portfolio-p' )[0]
 					)
 				)
 			),
