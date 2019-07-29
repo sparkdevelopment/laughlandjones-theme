@@ -26,6 +26,7 @@ if ( ! function_exists( 'tonik_register_thumbnails' ) ) {
 		add_image_size( 'lj-team-retina', 500, 1400, true );
 		add_image_size( 'lj-portfolio-p', 650, 975, true );
 		add_image_size( 'lj-portfolio-l', 1250, 833, true );
+		add_image_size( 'lj-collection-cover', 1024, 768, true );
 	}
 }
 add_action( 'after_setup_theme', 'tonik_register_thumbnails' );

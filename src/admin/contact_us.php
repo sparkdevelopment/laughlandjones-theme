@@ -28,7 +28,6 @@ function lj_add_contact_us_studio_metaboxes() {
 		'type' => 'text_medium'
 	));
 }
-
 add_action( 'cmb2_admin_init', 'lj_add_contact_us_studio_metaboxes' );
 
 function lj_add_contact_us_warehouse_metaboxes() {

@@ -35,7 +35,8 @@ body {
   margin: 0;
   width: 100%;
   height: 100%;
-  overflow: unset !important; }
+  overflow: unset !important;
+  font-family: "Sweet", sans-serif !important; }
 
 button {
   outline: 0;
@@ -77,7 +78,7 @@ a:visited {
   font-style: normal; }
 
 h1 {
-  font-size: 1.4rem;
+  font-size: 1.4rem !important;
   text-transform: uppercase; }
 
 h2 {
@@ -1609,21 +1610,320 @@ footer {
           position: relative;
           display: block; } }
 
-#fabrics {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
-  color: #66686a;
-  padding: 0 30px;
-  text-align: center; }
+.fabrics-archive {
+  padding-bottom: 70px; }
+  .fabrics-archive .highlights-section,
+  .fabrics-archive .all-section {
+    padding: 1rem 0;
+    background: #e2e2e3; }
+    .fabrics-archive .highlights-section .collections-container,
+    .fabrics-archive .all-section .collections-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      margin: 0 -8px;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+      .fabrics-archive .highlights-section .collections-container .collection,
+      .fabrics-archive .all-section .collections-container .collection {
+        max-width: 25%;
+        height: auto;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+        flex: 1 0 auto;
+        padding: 25px 8px; }
+        .fabrics-archive .highlights-section .collections-container .collection::before,
+        .fabrics-archive .all-section .collections-container .collection::before {
+          content: "";
+          float: left;
+          padding-top: 100%; }
+        .fabrics-archive .highlights-section .collections-container .collection a,
+        .fabrics-archive .all-section .collections-container .collection a {
+          width: 100%;
+          height: 100%;
+          background-position: center;
+          background-size: cover;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: end;
+          -ms-flex-align: end;
+          align-items: flex-end;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          font-size: 200%;
+          text-transform: lowercase;
+          position: relative; }
+          .fabrics-archive .highlights-section .collections-container .collection a:hover,
+          .fabrics-archive .all-section .collections-container .collection a:hover {
+            text-decoration: none;
+            -webkit-transition-duration: .3s;
+            -o-transition-duration: .3s;
+            transition-duration: .3s; }
+            .fabrics-archive .highlights-section .collections-container .collection a:hover div,
+            .fabrics-archive .all-section .collections-container .collection a:hover div {
+              background-color: #dd7a39; }
+            .fabrics-archive .highlights-section .collections-container .collection a:hover i,
+            .fabrics-archive .all-section .collections-container .collection a:hover i {
+              -webkit-filter: grayscale(100%) opacity(30%);
+              filter: grayscale(100%) opacity(30%); }
+          .fabrics-archive .highlights-section .collections-container .collection a div,
+          .fabrics-archive .all-section .collections-container .collection a div {
+            width: 100%;
+            padding: 10px 5px;
+            -webkit-transition-duration: .3s;
+            -o-transition-duration: .3s;
+            transition-duration: .3s;
+            color: #fff;
+            background-color: rgba(102, 104, 106, 0.85);
+            z-index: 2;
+            font-size: 1.1rem;
+            text-align: center; }
+          .fabrics-archive .highlights-section .collections-container .collection a i,
+          .fabrics-archive .all-section .collections-container .collection a i {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            z-index: 1;
+            -webkit-transition-duration: .3s;
+            -o-transition-duration: .3s;
+            transition-duration: .3s; }
+  .fabrics-archive .highlights-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 30px 0 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row;
+    flex-flow: row; }
+    .fabrics-archive .highlights-container .highlight {
+      margin: 4px;
+      -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+      height: auto;
+      width: 30%; }
+      .fabrics-archive .highlights-container .highlight::before {
+        content: "";
+        float: left;
+        padding-top: 100%; }
+      .fabrics-archive .highlights-container .highlight a {
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        font-size: 200%;
+        text-transform: lowercase;
+        position: relative;
+        text-align: center; }
+        .fabrics-archive .highlights-container .highlight a:hover {
+          text-decoration: none;
+          -webkit-transition-duration: .3s;
+          -o-transition-duration: .3s;
+          transition-duration: .3s; }
+          .fabrics-archive .highlights-container .highlight a:hover div {
+            background-color: #dd7a39; }
+          .fabrics-archive .highlights-container .highlight a:hover i {
+            -webkit-filter: grayscale(100%) opacity(30%);
+            filter: grayscale(100%) opacity(30%); }
+        .fabrics-archive .highlights-container .highlight a div {
+          padding: 35px 40px;
+          -webkit-transition-duration: .3s;
+          -o-transition-duration: .3s;
+          transition-duration: .3s;
+          color: #fff;
+          background-color: rgba(102, 104, 106, 0.85);
+          border: 1px solid #fff;
+          z-index: 2; }
+        .fabrics-archive .highlights-container .highlight a i {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          z-index: 1;
+          -webkit-transition-duration: .3s;
+          -o-transition-duration: .3s;
+          transition-duration: .3s; }
+  .fabrics-archive h1 {
+    margin: 60px 0 30px; }
+  .fabrics-archive .highlights-section {
+    padding-bottom: 60px; }
+  .fabrics-archive .all-section {
+    background-color: white; }
+
+.fabrics-header .breadcrumbs {
+  padding: .5rem 0;
+  font-size: .8rem;
+  text-transform: uppercase;
+  background-color: white; }
+
+.fabrics-filters {
+  padding: 1rem 0;
+  background: #66686a;
+  color: white;
+  font-size: .9rem; }
+  .fabrics-filters .filters {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 0; }
+    .fabrics-filters .filters li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      margin: 0 5px;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      .fabrics-filters .filters li label {
+        margin: .5rem; }
+        .fabrics-filters .filters li label input[type="radio"] {
+          margin-right: .5rem; }
+      .fabrics-filters .filters li input[type="text"] {
+        padding: 6px 12px;
+        border: 1px solid #ccc; }
+      .fabrics-filters .filters li .btn-group button {
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+        font-size: .9rem;
+        border-radius: 0; }
+      .fabrics-filters .filters li .btn-group .btn {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: center;
+        vertical-align: middle;
+        -ms-touch-action: manipulation;
+        touch-action: manipulation;
+        cursor: pointer;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 14px;
+        line-height: 1.429; }
+      .fabrics-filters .filters li .btn-group .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        min-width: 160px;
+        padding: 5px 0;
+        margin: 2px 0 0 -1px;
+        list-style: none;
+        font-size: 14px;
+        text-align: left;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 4px;
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+        background-clip: padding-box; }
+        .fabrics-filters .filters li .btn-group .dropdown-menu li > a {
+          margin: 0 !important;
+          clear: both;
+          font-weight: 400;
+          color: #333;
+          display: block;
+          padding: 3px 20px;
+          line-height: 1.429;
+          white-space: nowrap; }
+          .fabrics-filters .filters li .btn-group .dropdown-menu li > a label {
+            margin: 0 !important;
+            padding: 0 !important; }
+    .fabrics-filters .filters button[type="submit"] {
+      margin: -6px 0;
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #dd7a39;
+      font-weight: 700;
+      text-transform: uppercase; }
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .fabrics-filters .filters li {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .fabrics-archive .highlights-container .highlight a div {
+    font-size: 1.6rem; }
+  .fabrics-archive .collections-container .collection {
+    height: 294px !important;
+    width: 250px !important; } }
+
+@media (max-width: 767px) {
+  .fabrics-filters .filters {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .fabrics-filters .filters li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column; }
+      .fabrics-filters .filters li > * {
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+        width: 250px;
+        margin: 10px auto !important; }
+  .fabrics-archive .highlights-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .fabrics-archive .highlights-container .highlight {
+      height: 100px;
+      width: 100%; }
+      .fabrics-archive .highlights-container .highlight a div {
+        padding: 15px 5px;
+        width: 50%;
+        font-size: 1.5rem; }
+  .fabrics-archive .collections-container {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important; }
+    .fabrics-archive .collections-container .collection {
+      height: 294px !important;
+      width: 250px !important;
+      margin: 0 auto; }
+  h1 {
+    text-align: center; } }
 
 #in-progress {
   position: relative;
