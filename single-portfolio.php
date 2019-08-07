@@ -19,9 +19,9 @@ $post_meta = get_post_meta( get_the_ID() );
 
 $project = [
 	'title'       => get_the_title(),
-	'location'    => $post_meta['location'][0],
-	'description' => $post_meta['description'][0],
-	'testimonial' => $post_meta['testimonial'][0],
+	'location'    => $post_meta['location'][0] ?? null,
+	'description' => $post_meta['description'][0] ?? null,
+	'testimonial' => $post_meta['testimonial'][0] ?? null,
 	'cgi_link'    => null,
 ];
 
@@ -30,16 +30,18 @@ $photo_array = get_post_meta( get_the_ID(), 'photos', true );
 
 $photos = [];
 
-foreach ( $photo_array as $photo_id => $photo ) {
-	$imgmeta = wp_get_attachment_metadata( $photo_id );
-	$is_landscape = $imgmeta['width'] > $imgmeta['height'];
+if ( $photo_array ) {
+	foreach ( $photo_array as $photo_id => $photo ) {
+		$imgmeta = wp_get_attachment_metadata( $photo_id );
+		$is_landscape = $imgmeta['width'] > $imgmeta['height'];
 
-	$photos[] = array(
-		'orientation' => $is_landscape ? 'landscape' : 'portrait',
-		'normal'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-mobile-l' : 'lj-home-mobile-p' )[0],
-		'mobile'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-mobile-l' : 'lj-home-mobile-p' )[0],
-		'retina'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-retina-l' : 'lj-home-retina-p' )[0]
-	);
+		$photos[] = array(
+			'orientation' => $is_landscape ? 'landscape' : 'portrait',
+			'normal'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-mobile-l' : 'lj-home-mobile-p' )[0],
+			'mobile'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-mobile-l' : 'lj-home-mobile-p' )[0],
+			'retina'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-retina-l' : 'lj-home-retina-p' )[0]
+		);
+	}
 }
 
 ?>

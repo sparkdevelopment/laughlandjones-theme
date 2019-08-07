@@ -36,7 +36,8 @@ body {
   width: 100%;
   min-height: 100%;
   overflow: unset !important;
-  font-family: "Sweet", sans-serif !important; }
+  font-family: "Sweet", sans-serif !important;
+  height: 100vh; }
 
 button {
   outline: 0;
