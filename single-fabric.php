@@ -47,18 +47,22 @@ function get_variations( $post_id = false ) {
 
 	$variation_meta = get_post_meta( $post_id, 'lj_variations', true );
 
-	foreach ( $variation_meta as $variation ) {
-		$variation_array = [
-			'no'        => $variation['variation_no'],
-			'image_url' => $variation['image'],
-			'colours'   => []
-		];
+	if ( $variation_meta ) {
 
-		foreach( $variation['colour'] as $colour ) {
-			$variation_array['colours'][ get_term_field( 'name', $colour, 'fabric_colour', 'string') ] = get_term_meta( $colour, 'lj_colour_code', true );
+		foreach ( $variation_meta as $variation ) {
+			$variation_array = [
+				'no'        => $variation['variation_no'],
+				'image_url' => $variation['image'],
+				'colours'   => []
+			];
+
+			foreach( $variation['colour'] as $colour ) {
+				$variation_array['colours'][ get_term_field( 'name', $colour, 'fabric_colour', 'string') ] = get_term_meta( $colour, 'lj_colour_code', true );
+			}
+
+			$variations[] = $variation_array;
 		}
 
-		$variations[] = $variation_array;
 	}
 
 	return $variations;
@@ -159,8 +163,10 @@ get_header();
 								<th>Colours included</th>
 								<td id="fabric-selected-colors">
 									<div class="colors">
-										<?php foreach( $template_data['variations'][0]['colours'] as $name => $hex ) { ?>
-										<b style="background-color:<?php esc_attr_e( $hex ); ?>" title="<?php esc_attr_e( $name ); ?>"></b>
+										<?php if ( $template_data['variations'] ) { ?>
+											<?php foreach( $template_data['variations'][0]['colours'] as $name => $hex ) { ?>
+											<b style="background-color:<?php esc_attr_e( $hex ); ?>" title="<?php esc_attr_e( $name ); ?>"></b>
+											<?php } ?>
 										<?php } ?>
 									</div>
 								</td>
@@ -211,12 +217,14 @@ get_header();
 						<div id="right-arrow" class="arrows"></div>
 
 						<div class="swiper-wrapper">
-							<?php foreach( $template_data['slides'] as $slide ) { ?>
-							<div class="swiper-slide s">
-								<div class="slide-image"
-									style="background-image: url(<?php echo esc_url( $slide ); ?>);">
+							<?php if ( $template_data['slides'] ) { ?>
+								<?php foreach( $template_data['slides'] as $slide ) { ?>
+								<div class="swiper-slide s">
+									<div class="slide-image"
+										style="background-image: url(<?php echo esc_url( $slide ); ?>);">
+									</div>
 								</div>
-							</div>
+								<?php } ?>
 							<?php } ?>
 						</div>
 					</div>
@@ -228,6 +236,7 @@ get_header();
 		</div>
 	</div>
 
+	<?php if ( $template_data['siblings'] ) { ?>
 	<div class="items-list">
 		<div class="container">
 			<div class="row">
@@ -252,5 +261,6 @@ get_header();
 			</div>
 		</div>
 	</div>
+	<?php } ?>
 
 <?php get_footer();
