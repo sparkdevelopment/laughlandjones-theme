@@ -85,7 +85,7 @@ function cmb2_get_term_options( $field ) {
 		? get_terms( $args )
 		: get_terms( $taxonomy, $args );
 
-	// Initate an empty array
+	// Initiate an empty array
 	$term_options = array();
 	if ( ! empty( $terms ) ) {
 		foreach ( $terms as $term ) {

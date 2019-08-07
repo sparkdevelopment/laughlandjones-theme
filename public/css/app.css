@@ -1,3 +1,4 @@
+/* core files makes larger project easier to manage */
 @-webkit-keyframes zoomin {
   0% {
     -webkit-transform: scale(1);
@@ -8,7 +9,6 @@
   100% {
     -webkit-transform: scale(1);
     transform: scale(1); } }
-
 @keyframes zoomin {
   0% {
     -webkit-transform: scale(1);
@@ -34,7 +34,7 @@ body {
   background-color: #e2e2e3;
   margin: 0;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   overflow: unset !important;
   font-family: "Sweet", sans-serif !important; }
 
@@ -83,6 +83,12 @@ h1 {
 
 h2 {
   font-size: 1.2rem; }
+
+a:visited {
+  color: #000; }
+
+a:hover {
+  color: #000; }
 
 .page .orange {
   color: #dd7a39; }
@@ -546,7 +552,6 @@ h2 {
     right: 0;
     background-image: url("../../resources/assets/images/arrow-right2.png"); } }
 
-/* core files makes larger project easier to manage */
 footer {
   position: fixed;
   display: block;
@@ -1775,11 +1780,252 @@ footer {
   .fabrics-archive .all-section {
     background-color: white; }
 
+.fabrics-collection {
+  padding-bottom: 70px;
+  background: #e2e2e3; }
+  .fabrics-collection .archive-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 393px; }
+  .fabrics-collection .items-list .designs {
+    list-style: none;
+    display: block;
+    margin: 20px -8px;
+    padding: 0;
+    text-align: center; }
+    .fabrics-collection .items-list .designs li {
+      display: block;
+      margin: 0;
+      padding: 25px 8px;
+      text-align: left;
+      width: 25%; }
+      .fabrics-collection .items-list .designs li .image {
+        position: relative;
+        display: block;
+        -webkit-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        transition-duration: .3s;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover; }
+      .fabrics-collection .items-list .designs li h4 {
+        font-size: 140%;
+        text-transform: none;
+        color: #dd7a39;
+        margin-top: 10px;
+        margin-bottom: 10px; }
+        .fabrics-collection .items-list .designs li h4 a,
+        .fabrics-collection .items-list .designs li h4 a:visited {
+          color: #dd7a39; }
+      .fabrics-collection .items-list .designs li a,
+      .fabrics-collection .items-list .designs li a:visited {
+        color: #212529; }
+  .fabrics-collection .row-description {
+    margin-left: 0;
+    margin-right: 0; }
+
+.fabric-page header {
+  position: relative;
+  background-color: #e2e2e3;
+  height: auto; }
+  .fabric-page header h1 {
+    margin: 20px 0; }
+
+.fabric-page .design-meta {
+  margin: 30px 0; }
+  .fabric-page .design-meta .row {
+    margin-left: 0;
+    margin-right: 0; }
+    .fabric-page .design-meta .row .col-fabric-info table tr {
+      display: table-row; }
+    .fabric-page .design-meta .row .col-fabric-info table th,
+    .fabric-page .design-meta .row .col-fabric-info table td {
+      padding: 6px 0;
+      font-weight: 400;
+      vertical-align: top; }
+    .fabric-page .design-meta .row .col-fabric-info table th {
+      padding-right: 10px !important;
+      white-space: pre; }
+    .fabric-page .design-meta .row .col-fabric-info table .colors b {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin: 0 0 -3px;
+      border: 1px solid #ddd; }
+      .fabric-page .design-meta .row .col-fabric-info table .colors b:first-child {
+        margin-left: 3px; }
+    .fabric-page .design-meta .row .add-to-cart.visible,
+    .fabric-page .design-meta .row .remove-from-cart.visible {
+      display: block; }
+    .fabric-page .design-meta .row .add-to-cart,
+    .fabric-page .design-meta .row .remove-from-cart {
+      display: none;
+      padding: 12px 5px;
+      font-size: 85%;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      letter-spacing: -1px;
+      color: #fff;
+      background-color: #dd7a39; }
+    .fabric-page .design-meta .row .col-colors .design-colors ul {
+      list-style: none;
+      display: block;
+      width: 100%;
+      padding: 0;
+      margin: 0; }
+      .fabric-page .design-meta .row .col-colors .design-colors ul li {
+        display: block;
+        width: 100%;
+        height: 81px;
+        margin: 1px 0 0; }
+        .fabric-page .design-meta .row .col-colors .design-colors ul li a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: cover; }
+  .fabric-page .design-meta .h3 {
+    margin: 0 0 15px;
+    text-transform: uppercase;
+    color: #66686a;
+    font-size: 115%;
+    letter-spacing: -1px; }
+  .fabric-page .design-meta .entry-thumbnail {
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+
+.fabric-page .form {
+  background-color: #e2e2e3;
+  padding: 30px 0 90px; }
+  .fabric-page .form .h2 {
+    text-transform: uppercase;
+    margin: 0 0 20px;
+    font-size: 1.4rem;
+    letter-spacing: -1px; }
+  .fabric-page .form form {
+    background-color: #66686a;
+    color: #fff;
+    padding: 30px; }
+    .fabric-page .form form h2 {
+      text-transform: uppercase;
+      margin: 0 0 20px;
+      font-size: 1.4rem; }
+    .fabric-page .form form .container-fluid {
+      padding-left: 0;
+      padding-right: 0; }
+    .fabric-page .form form .row {
+      margin: 0 -5px; }
+      .fabric-page .form form .row > div {
+        padding: 0 5px; }
+    .fabric-page .form form input[type="text"],
+    .fabric-page .form form input[type="tel"],
+    .fabric-page .form form input[type="email"],
+    .fabric-page .form form textarea {
+      color: #66686a;
+      background-color: rgba(255, 255, 255, 0.41);
+      border: none;
+      width: 100%;
+      margin: 5px 0;
+      padding: 10px;
+      outline: 0;
+      letter-spacing: -1px;
+      font-size: 16px; }
+    .fabric-page .form form input[type="checkbox"],
+    .fabric-page .form form input[type="radio"] {
+      margin: 4px 0 0;
+      margin-top: 1px\9;
+      line-height: normal; }
+    .fabric-page .form form button,
+    .fabric-page .form form input[type="submit"] {
+      width: 100%;
+      margin: 5px 0;
+      padding: 9px;
+      color: #fff;
+      background-color: #dd7a39;
+      border: 1px solid #fff;
+      font-size: 90%;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .2em; }
+    .fabric-page .form form textarea {
+      height: 153px; }
+    .fabric-page .form form label {
+      position: relative;
+      display: block;
+      margin: -5px 0 0;
+      padding-left: 20px;
+      font-size: 75%;
+      font-weight: 400;
+      line-height: 1.2em; }
+      .fabric-page .form form label input {
+        position: absolute;
+        left: 0;
+        top: 0; }
+    .fabric-page .form form .wpcf7-list-item {
+      margin: 0; }
+
+.items-list {
+  padding-bottom: 70px; }
+  .items-list h1 {
+    margin: 35px 0 10px; }
+  .items-list .designs {
+    list-style: none;
+    display: block;
+    margin: 0 -8px 20px;
+    padding: 0;
+    text-align: center; }
+    .items-list .designs li {
+      display: block;
+      margin: 0;
+      padding: 25px 6px;
+      text-align: left; }
+      .items-list .designs li .image {
+        position: relative;
+        display: block;
+        -webkit-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        transition-duration: .3s;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover; }
+      .items-list .designs li h4 {
+        font-size: 125%;
+        text-transform: none;
+        margin: 10px 0;
+        letter-spacing: -1px; }
+        .items-list .designs li h4 a {
+          color: #dd7a39 !important; }
+      .items-list .designs li > div {
+        margin: 8px 0; }
+        .items-list .designs li > div a {
+          text-decoration: none;
+          border-bottom: 1px solid #fff; }
+
 .fabrics-header .breadcrumbs {
   padding: .5rem 0;
   font-size: .8rem;
   text-transform: uppercase;
   background-color: white; }
+  .fabrics-header .breadcrumbs ul {
+    margin: 0; }
+    .fabrics-header .breadcrumbs ul li {
+      display: inline-block;
+      color: #66686a;
+      font-size: 12px; }
+      .fabrics-header .breadcrumbs ul li a {
+        display: inline-block; }
+        .fabrics-header .breadcrumbs ul li a::after {
+          content: ">";
+          display: inline-block;
+          margin: 0 8px; }
 
 .fabrics-filters {
   padding: 1rem 0;
@@ -1794,7 +2040,7 @@ footer {
     -ms-flex-pack: justify;
     justify-content: space-between;
     margin: 0; }
-    .fabrics-filters .filters li {
+    .fabrics-filters .filters > li {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -1805,20 +2051,20 @@ footer {
       -webkit-box-pack: center;
       -ms-flex-pack: center;
       justify-content: center; }
-      .fabrics-filters .filters li label {
+      .fabrics-filters .filters > li label {
         margin: .5rem; }
-        .fabrics-filters .filters li label input[type="radio"] {
+        .fabrics-filters .filters > li label input[type="radio"] {
           margin-right: .5rem; }
-      .fabrics-filters .filters li input[type="text"] {
+      .fabrics-filters .filters > li input[type="text"] {
         padding: 6px 12px;
         border: 1px solid #ccc; }
-      .fabrics-filters .filters li .btn-group button {
+      .fabrics-filters .filters > li .btn-group button {
         color: #333;
         background-color: #fff;
         border-color: #ccc;
         font-size: .9rem;
         border-radius: 0; }
-      .fabrics-filters .filters li .btn-group .btn {
+      .fabrics-filters .filters > li .btn-group .btn {
         display: inline-block;
         margin-bottom: 0;
         font-weight: 400;
@@ -1832,12 +2078,12 @@ footer {
         padding: 6px 12px;
         font-size: 14px;
         line-height: 1.429; }
-      .fabrics-filters .filters li .btn-group .dropdown-menu {
+      .fabrics-filters .filters > li .btn-group .dropdown-menu {
         position: absolute;
         top: 100%;
         left: 0;
-        z-index: 1000;
-        min-width: 160px;
+        z-index: 9000;
+        min-width: 142px;
         padding: 5px 0;
         margin: 2px 0 0 -1px;
         list-style: none;
@@ -1850,16 +2096,16 @@ footer {
         -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
         background-clip: padding-box; }
-        .fabrics-filters .filters li .btn-group .dropdown-menu li > a {
+        .fabrics-filters .filters > li .btn-group .dropdown-menu li > a {
           margin: 0 !important;
           clear: both;
           font-weight: 400;
           color: #333;
           display: block;
-          padding: 3px 20px;
+          padding: 3px 10px;
           line-height: 1.429;
           white-space: nowrap; }
-          .fabrics-filters .filters li .btn-group .dropdown-menu li > a label {
+          .fabrics-filters .filters > li .btn-group .dropdown-menu li > a label {
             margin: 0 !important;
             padding: 0 !important; }
     .fabrics-filters .filters button[type="submit"] {
@@ -1880,7 +2126,37 @@ footer {
     font-size: 1.6rem; }
   .fabrics-archive .collections-container .collection {
     height: 294px !important;
-    width: 250px !important; } }
+    width: 250px !important; }
+  .fabrics-collection .items-list .designs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .fabrics-collection .items-list .designs li {
+      display: block;
+      width: 250px; }
+      .fabrics-collection .items-list .designs li .image {
+        width: 100%;
+        height: 234px; }
+  .items-list .designs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+    .items-list .designs li {
+      display: block;
+      width: 235px; }
+      .items-list .designs li .image {
+        width: 100%;
+        height: 234px; } }
 
 @media (max-width: 767px) {
   .fabrics-filters .filters {
@@ -1924,6 +2200,66 @@ footer {
       margin: 0 auto; }
   h1 {
     text-align: center; } }
+
+@media (min-width: 992px) {
+  .design-meta .entry-thumbnail {
+    height: 370px; }
+  .design-meta .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    .design-meta .row .add-to-cart,
+    .design-meta .row .remove-from-cart {
+      position: absolute;
+      top: 326px;
+      left: 8px;
+      right: 8px; }
+    .design-meta .row .col-colors {
+      position: relative; }
+      .design-meta .row .col-colors .design-colors {
+        position: absolute;
+        left: 8px;
+        right: 0;
+        top: 42px;
+        height: 328px;
+        overflow-x: hidden;
+        overflow-y: scroll; }
+  .design-meta .row > div {
+    padding: 0 8px; }
+    .design-meta .row > div:first-child {
+      padding-left: 0; }
+    .design-meta .row > div:last-child {
+      padding-right: 0; }
+  .form {
+    padding: 30px 0 120px; }
+  .container {
+    width: 970px; } }
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .design-meta .h3 {
+    font-size: 120%; }
+  .design-meta table {
+    font-size: 80%; }
+  .design-meta .col-thumbnail {
+    font-size: 90%; } }
+
+@media (min-width: 1200px) {
+  .designs {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+    .designs li {
+      display: block;
+      width: 25%; }
+      .designs li .image {
+        width: 273px;
+        height: 273px; } }
+
+@media (max-width: 1199px) {
+  .container {
+    width: 100%; } }
 
 #in-progress {
   position: relative;

@@ -3,10 +3,11 @@
 include_once('admin/fabric.php');
 include_once('admin/home.php');
 include_once('admin/portfolio.php');
-include_once('admin/team.php');
 include_once('admin/contact_us.php');
+include_once('admin/team.php');
 include_once('admin/our_approach.php');
 include_once('admin/fabric-collection.php');
+include_once('admin/fabric_colour.php');
 include_once('admin/fabrics.php');
 
 add_action( 'admin_init', 'hide_editor' );

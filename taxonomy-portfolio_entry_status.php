@@ -7,20 +7,6 @@
 
 $term = get_term_by( 'slug', get_query_var('term'), get_query_var('taxonomy') );
 
-$in_progresses = [
-  [
-	  'title' => "Hotel 'A'",
-	  'location' => 'Avoriaz',
-	  'client' => 'Private Client',
-	  'geography' => 'Morzine, France',
-	  'size' => '40 rooms across 2 building wings connected by an atrium',
-	  'architect' => 'Marullaz Architectures',
-	  'interior_architecture' => 'Laughland Jones',
-	  'interior_design' => 'Laughland Jones',
-	  'completion' => '2019'
-  ]
-];
-
 // Get data
 $in_progresses = [];
 if ( have_posts() ) {

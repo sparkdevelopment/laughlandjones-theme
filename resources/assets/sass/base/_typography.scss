@@ -15,8 +15,18 @@ h2 {
   font-size: 1.2rem;
 }
 
+a {
+  &:visited {
+    color: $c_font;
+  }
+
+  &:hover {
+    color: $c_font;
+  }
+}
+
 .page {
   .orange {
-    color: #dd7a39;
+    color: $c_main;
   }
 }

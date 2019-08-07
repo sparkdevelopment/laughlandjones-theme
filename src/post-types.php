@@ -136,7 +136,7 @@ function lj_fabrics_cpt_generating_rule($wp_rewrite) {
 
     foreach ($terms as $term) {
 
-        $rules['fabrics/' . $term->slug . '/([^/]*)$'] = 'index.php?post_type=' . $post_type. '&' . $post_type. '=$matches[1]&name=$matches[1]';
+        $rules['fabrics/' . $term->slug . '/([^/]+)$'] = 'index.php?post_type=' . $post_type. '&' . $post_type. '=$matches[1]&name=$matches[1]';
 
     }
 

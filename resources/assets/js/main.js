@@ -11,6 +11,7 @@ import InProgress from './pages/_in-progress'
 import Portfolio from './pages/_portfolio'
 import Project from './pages/_project'
 import Team from './pages/_team'
+import Fabric from './pages/_fabrics'
 
 // Prevent tree shaking
 /* eslint-disable no-unused-vars */
@@ -30,6 +31,7 @@ class App {
     if ($('#portfolio').length) { this.portfolio = new Portfolio() }
     if ($('#project').length) { this.project = new Project() }
     if ($('#who').length) { this.team = new Team() }
+    if ($('body.single-fabric').length) { this.fabric = new Fabric() }
 
     this.Subscribe = new Subscribe()
 

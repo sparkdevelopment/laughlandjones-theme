@@ -2,6 +2,9 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
+// helpers
+@import "helpers/core";
+
 // base
 @import "base/animation";
 @import "base/reset";
@@ -11,9 +14,6 @@
 @import "components/buttons";
 @import "components/modal";
 @import "components/slideshow";
-
-// helpers
-@import "helpers/core";
 
 // layout
 @import "layout/footer";
