@@ -571,7 +571,8 @@ footer {
     -ms-user-select: none;
     user-select: none; }
   footer a:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    color: #000; }
   footer #menu-container {
     position: absolute;
     display: block;
