@@ -17730,33 +17730,33 @@ var InProgress = function () {
 
 var Portfolio = function () {
   function Portfolio() {
-    var _this = this;
-
     classCallCheck(this, Portfolio);
 
     this.initDom();
 
+    var self = this;
+
     $(document).ready(function () {
-      _this.project.on('click', _this.goToProject);
+      self.project.on('click', self.goToProject);
 
-      _this.scrollBtns.on('click', _this.scrollPortfolio);
+      self.scrollBtns.on('click', self, self.scrollPortfolio);
 
-      _this.projectsListWrap.scroll(function () {
-        if (parseInt(this.projectsListWrap.scrollLeft()) < 50) {
-          TweenLite.set(this.leftBtn, { opacity: 0 });
+      self.projectsListWrap.scroll(function () {
+        if (parseInt(self.projectsListWrap.scrollLeft()) < 50) {
+          TweenLite.set(self.leftBtn, { opacity: 0 });
         } else {
-          TweenLite.set(this.leftBtn, { opacity: 1 });
+          TweenLite.set(self.leftBtn, { opacity: 1 });
         }
 
-        this.innerWidth = $(window).width();
-        var threshold = this.projectsListWrap[0].scrollWidth - 50;
+        self.innerWidth = $(window).width();
+        var threshold = self.projectsListWrap[0].scrollWidth - 50;
 
-        var rightPos = this.innerWidth + parseInt(this.projectsListWrap.scrollLeft()) + 50;
+        var rightPos = self.innerWidth + parseInt(self.projectsListWrap.scrollLeft()) + 50;
 
         if (rightPos > threshold) {
-          TweenLite.set(this.rightBtn, { opacity: 0 });
+          TweenLite.set(self.rightBtn, { opacity: 0 });
         } else {
-          TweenLite.set(this.rightBtn, { opacity: 1 });
+          TweenLite.set(self.rightBtn, { opacity: 1 });
         }
       });
     });
@@ -17778,7 +17778,7 @@ var Portfolio = function () {
     value: function scrollPortfolio(e) {
       var dir = $(e.currentTarget).attr('id');
       var dirSign = dir === 'left' ? '-' : '+';
-      this.projectsListWrap.animate({ scrollLeft: dirSign + '=800px' }, 400);
+      e.data.projectsListWrap.animate({ scrollLeft: dirSign + '=800px' }, 400);
     }
   }, {
     key: 'goToProject',
