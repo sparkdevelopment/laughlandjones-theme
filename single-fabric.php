@@ -119,6 +119,8 @@ get_header();
 			</ul>
 		</div>
 	</div>
+
+	<div class="basket"></div>
 </div>
 
 <div class="fabrics fabric-page">

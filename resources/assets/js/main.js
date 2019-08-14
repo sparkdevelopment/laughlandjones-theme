@@ -32,6 +32,7 @@ class App {
     if ($('#project').length) { this.project = new Project() }
     if ($('#who').length) { this.team = new Team() }
     if ($('body.single-fabric').length) { this.fabric = new Fabric() }
+    if ($('body.post-type-archive-fabric').length) { this.fabric = new Fabric() }
 
     this.Subscribe = new Subscribe()
 

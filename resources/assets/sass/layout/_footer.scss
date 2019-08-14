@@ -31,8 +31,8 @@ footer {
 
     &.open .nav-item:not(.current-menu-item),
     &.open .menu-item:not(.current-menu-item) {
-      box-shadow: 0 -1px 0 0 white inset;
-      color: white;
+      box-shadow: 0 -1px 0 0 white inset !important;
+      color: white !important;
     }
 
     .nav-item,
@@ -60,14 +60,21 @@ footer {
       }
 
       &.current-menu-item {
-        color: #dd7a39;
-        background-color: #5c5e60;
+        background-color: #5c5e60 !important;
         box-shadow: 0 -3px 0 0 #dd7a39 inset;
+
+        a {
+          color: #dd7a39 !important;
+        }
       }
 
       & > a {
         display: block;
         height: 100%;
+      }
+
+      a {
+        color: white;
       }
     }
   }
@@ -147,22 +154,22 @@ footer {
             transition: .05s ease transform;
           }
         }
+      }
 
-        .twitter .black {
-          background-position: 0 0;
-        }
+      .twitter .black {
+        background-position: 0 0;
+      }
 
-        .instagram .black {
-          background-position: -50px 0;
-        }
+      .instagram .black {
+        background-position: -50px 0;
+      }
 
-        .pinterest .black {
-          background-position: -100px 0;
-        }
+      .pinterest .black {
+        background-position: -100px 0;
+      }
 
-        .linkedin .black {
-          background-position: -150px 0;
-        }
+      .linkedin .black {
+        background-position: -150px 0;
       }
     }
   }
@@ -261,6 +268,10 @@ footer {
           .linkedin .black {
             background-position: -120px 0;
           }
+        }
+
+        a {
+          color: black;
         }
       }
     }
@@ -393,6 +404,10 @@ footer {
 
         &#footer-social {
           position: absolute;
+        }
+
+        a {
+          color: black;
         }
       }
     }

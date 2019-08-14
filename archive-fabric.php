@@ -18,13 +18,15 @@ $template_data = [
 <div class="fabrics-header">
 	<?php get_template_part( 'resources/templates/nav/nav', 'fabrics' ); ?>
 
-	<div class="breadcrumbs">
-		<div class="container">
-			<ul>
-				<li>
-					Fabrics
-				</li>
-			</ul>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-6 breadcrumbs">
+				<ul>
+					<li>Fabrics</li>
+				</ul>
+			</div>
+
+			<div class="col-sm-12 col-md-6 basket"></div>
 		</div>
 	</div>
 </div>

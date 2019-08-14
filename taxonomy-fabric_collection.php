@@ -56,6 +56,8 @@ $template_data = [
 			</ul>
 		</div>
 	</div>
+
+	<div class="basket"></div>
 </div>
 
 <div class="fabrics fabrics-collection page">

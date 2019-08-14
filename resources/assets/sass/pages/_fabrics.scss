@@ -479,10 +479,17 @@
 }
 
 .fabrics-header {
-  .breadcrumbs {
+  font-size: 12px;
+
+  .breadcrumbs,
+  .basket {
     padding: .5rem 0;
     font-size: .8rem;
     text-transform: uppercase;
+    line-height: 32px;
+  }
+
+  .breadcrumbs {
     background-color: white;
 
     ul {
@@ -491,7 +498,6 @@
       li {
         display: inline-block;
         color: #66686a;
-        font-size: 12px;
 
         a {
           display: inline-block;
@@ -501,6 +507,37 @@
             display: inline-block;
             margin: 0 8px;
           }
+        }
+      }
+    }
+  }
+
+  .basket {
+    text-align: right;
+
+    a {
+      background-image: url("#{$imagePath}basket.svg");
+      background-repeat: no-repeat;
+      background-position: right 5px;
+      background-size: 18px 18px;
+      display: inline-block;
+      padding: 0 24px 0 8px;
+      text-decoration: none;
+      color: #dd7a39;
+
+      span {
+        display: inline-block;
+        padding: 0 3px;
+        height: 32px;
+        min-width: 32px;
+        background-color: #dd7a39;
+        color: #fff;
+        text-align: center;
+        border-radius: 50%;
+        margin-left: 2px;
+
+        i {
+          font-style: normal;
         }
       }
     }

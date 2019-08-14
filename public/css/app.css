@@ -584,9 +584,9 @@ footer {
     width: 100%; }
     footer #menu-container.open .nav-item:not(.current-menu-item),
     footer #menu-container.open .menu-item:not(.current-menu-item) {
-      -webkit-box-shadow: 0 -1px 0 0 white inset;
-      box-shadow: 0 -1px 0 0 white inset;
-      color: white; }
+      -webkit-box-shadow: 0 -1px 0 0 white inset !important;
+      box-shadow: 0 -1px 0 0 white inset !important;
+      color: white !important; }
     footer #menu-container .nav-item,
     footer #menu-container .menu-item {
       position: relative;
@@ -613,14 +613,19 @@ footer {
         background-color: #9e9d9b; }
       footer #menu-container .nav-item.current-menu-item,
       footer #menu-container .menu-item.current-menu-item {
-        color: #dd7a39;
-        background-color: #5c5e60;
+        background-color: #5c5e60 !important;
         -webkit-box-shadow: 0 -3px 0 0 #dd7a39 inset;
         box-shadow: 0 -3px 0 0 #dd7a39 inset; }
+        footer #menu-container .nav-item.current-menu-item a,
+        footer #menu-container .menu-item.current-menu-item a {
+          color: #dd7a39 !important; }
       footer #menu-container .nav-item > a,
       footer #menu-container .menu-item > a {
         display: block;
         height: 100%; }
+      footer #menu-container .nav-item a,
+      footer #menu-container .menu-item a {
+        color: white; }
   footer #menu {
     display: block;
     background-color: #66686a;
@@ -686,14 +691,14 @@ footer {
             -webkit-transition: .05s ease transform;
             -o-transition: .05s ease transform;
             transition: .05s ease transform; }
-        footer #footer-social .social-links a .twitter .black {
-          background-position: 0 0; }
-        footer #footer-social .social-links a .instagram .black {
-          background-position: -50px 0; }
-        footer #footer-social .social-links a .pinterest .black {
-          background-position: -100px 0; }
-        footer #footer-social .social-links a .linkedin .black {
-          background-position: -150px 0; }
+      footer #footer-social .social-links .twitter .black {
+        background-position: 0 0; }
+      footer #footer-social .social-links .instagram .black {
+        background-position: -50px 0; }
+      footer #footer-social .social-links .pinterest .black {
+        background-position: -100px 0; }
+      footer #footer-social .social-links .linkedin .black {
+        background-position: -150px 0; }
   footer #mobile-foot-content {
     position: relative;
     display: block;
@@ -769,6 +774,9 @@ footer {
           footer #menu-container .nav-item#footer-social .social-links a .linkedin .black,
           footer #menu-container .menu-item#footer-social .social-links a .linkedin .black {
             background-position: -120px 0; }
+        footer #menu-container .nav-item a,
+        footer #menu-container .menu-item a {
+          color: black; }
     footer #mobile-foot-content #foot-logo {
       position: relative;
       display: inline-block;
@@ -887,6 +895,9 @@ footer {
         footer #menu-container .nav-item#footer-social,
         footer #menu-container .menu-item#footer-social {
           position: absolute; }
+        footer #menu-container .nav-item a,
+        footer #menu-container .menu-item a {
+          color: black; }
     footer #menu {
       position: relative;
       display: inline-block;
@@ -2011,23 +2022,50 @@ footer {
           text-decoration: none;
           border-bottom: 1px solid #fff; }
 
-.fabrics-header .breadcrumbs {
-  padding: .5rem 0;
-  font-size: .8rem;
-  text-transform: uppercase;
-  background-color: white; }
-  .fabrics-header .breadcrumbs ul {
-    margin: 0; }
-    .fabrics-header .breadcrumbs ul li {
+.fabrics-header {
+  font-size: 12px; }
+  .fabrics-header .breadcrumbs,
+  .fabrics-header .basket {
+    padding: .5rem 0;
+    font-size: .8rem;
+    text-transform: uppercase;
+    line-height: 32px; }
+  .fabrics-header .breadcrumbs {
+    background-color: white; }
+    .fabrics-header .breadcrumbs ul {
+      margin: 0; }
+      .fabrics-header .breadcrumbs ul li {
+        display: inline-block;
+        color: #66686a; }
+        .fabrics-header .breadcrumbs ul li a {
+          display: inline-block; }
+          .fabrics-header .breadcrumbs ul li a::after {
+            content: ">";
+            display: inline-block;
+            margin: 0 8px; }
+  .fabrics-header .basket {
+    text-align: right; }
+    .fabrics-header .basket a {
+      background-image: url("../../resources/assets/images/basket.svg");
+      background-repeat: no-repeat;
+      background-position: right 5px;
+      background-size: 18px 18px;
       display: inline-block;
-      color: #66686a;
-      font-size: 12px; }
-      .fabrics-header .breadcrumbs ul li a {
-        display: inline-block; }
-        .fabrics-header .breadcrumbs ul li a::after {
-          content: ">";
-          display: inline-block;
-          margin: 0 8px; }
+      padding: 0 24px 0 8px;
+      text-decoration: none;
+      color: #dd7a39; }
+      .fabrics-header .basket a span {
+        display: inline-block;
+        padding: 0 3px;
+        height: 32px;
+        min-width: 32px;
+        background-color: #dd7a39;
+        color: #fff;
+        text-align: center;
+        border-radius: 50%;
+        margin-left: 2px; }
+        .fabrics-header .basket a span i {
+          font-style: normal; }
 
 .fabrics-filters {
   padding: 1rem 0;
