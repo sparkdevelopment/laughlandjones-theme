@@ -64,7 +64,7 @@
         position: relative;
         display: block;
         margin: 10px auto;
-        font-size: .9rem;
+        font-size: .9rem !important;
 
         em {
           font-style: normal;
@@ -227,7 +227,7 @@
         display: block;
         bottom: 40px;
         left: 110px;
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
         margin: 0;
 
         em {
@@ -419,7 +419,7 @@
 
         .name {
           margin-top: 15px;
-          font-size: 1.1rem;
+          font-size: 1.1rem !important;
         }
 
         .copy {

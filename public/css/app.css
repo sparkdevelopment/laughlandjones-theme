@@ -3145,7 +3145,7 @@ footer {
       position: relative;
       display: block;
       margin: 10px auto;
-      font-size: .9rem; }
+      font-size: .9rem !important; }
       #who #employees-list .employee .name em {
         font-style: normal;
         color: #343536;
@@ -3282,7 +3282,7 @@ footer {
         display: block;
         bottom: 40px;
         left: 110px;
-        font-size: 1.1rem;
+        font-size: 1.1rem !important;
         margin: 0; }
         #mobile-more .content .top .name em {
           font-size: .9rem; }
@@ -3407,7 +3407,7 @@ footer {
         transition: 1s ease background-position; }
       #who #employees-list .employee .name {
         margin-top: 15px;
-        font-size: 1.1rem; }
+        font-size: 1.1rem !important; }
       #who #employees-list .employee .copy {
         position: relative;
         display: block;
