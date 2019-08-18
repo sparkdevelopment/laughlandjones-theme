@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import Cookies from 'js-cookie'
 
 class Contact {
   constructor () {
@@ -6,6 +7,8 @@ class Contact {
     var self = this
 
     $(document).ready(function () {
+      var cookieName = 'lj-subscribe'
+
       self.locationTabs.on('click', (e) => {
         var mode = $(e.currentTarget).attr('data-location')
         self.toggleTab(mode)
@@ -14,6 +17,15 @@ class Contact {
       self.subscribeBtn.on('click', (e) =>
         window.UI.affectButtonUI(window.Modal.show.bind(window.Modal), e)
       )
+
+      if (Cookies.get(cookieName)) {
+        // have cookie
+      } else {
+        setTimeout(() => {
+          window.Subscribe.showForm(false)
+        }, 2000)
+        Cookies.set(cookieName, 'viewed')
+      }
     })
   }
 

@@ -22,6 +22,7 @@ class App {
   constructor () {
     window.UI = new UI()
     window.Modal = new Modal()
+    window.Subscribe = new Subscribe()
 
     // Instantiate correct page JS
     if ($('body.home').length) { this.Home = new Home() }
@@ -33,8 +34,6 @@ class App {
     if ($('#who').length) { this.team = new Team() }
     if ($('body.single-fabric').length) { this.fabric = new Fabric() }
     if ($('body.post-type-archive-fabric').length) { this.fabric = new Fabric() }
-
-    this.Subscribe = new Subscribe()
 
     mobile.addClass()
     this.addListeners()
