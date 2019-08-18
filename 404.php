@@ -10,20 +10,18 @@
 
 <main>
 	<section>
-		<article>
-			<h1><?php echo esc_html( 'Page not found', 'tonik' ); ?></h1>
+		<article style="text-align: center;">
+			<h1 style="color: #66686a; padding: 10vh 0;">
+				<?php echo esc_html( 'Page not found', 'tonik' ); ?>
+			</h1>
 
 			<h2>
-				<a href="<?php echo esc_attr( home_url() ); ?>">
-					<?php echo esc_html( 'Homepage', 'tonik' ); ?>
+				<a href="<?php echo esc_attr( home_url() ); ?>" style="color: #66686a; font-size: 1rem;">
+					<?php echo esc_html( 'Return to homepage', 'tonik' ); ?>
 				</a>
 			</h2>
 		</article>
 	</section>
-
-	<aside>
-		<?php get_sidebar(); ?>
-	</aside>
 </main>
 
 <?php get_footer(); ?>
