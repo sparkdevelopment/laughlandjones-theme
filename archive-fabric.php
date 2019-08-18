@@ -5,6 +5,11 @@ get_header();
 $fabric_options = get_option( 'lj_fabric_options' );
 
 $template_data = [
+	'holding_page' => [
+		'enabled' => $fabric_options['lj_fabrics_holding_enable'] ?? false,
+		'image'   => $fabric_options['lj_fabrics_holding_image'],
+		'text'    => $fabric_options['lj_fabrics_holding_text'],
+	],
 	'intro' => $fabric_options['lj_fabrics_intro'],
 	'featured' => [
 		1 => get_fabric_data( $fabric_options['lj_fabrics_featured1'] ),
@@ -14,6 +19,15 @@ $template_data = [
 ];
 
 ?>
+
+<?php if ( $template_data['holding_page']['enabled'] ) { ?>
+
+<div class="fabrics-holding">
+	<div class="holding-image" style="background-image: url(<?php echo esc_url( $template_data['holding_page']['image'] ); ?>)"></div>
+	<div class="holding-text"><?php echo wp_kses_post( wpautop( $template_data['holding_page']['text'] ) ); ?></div>
+</div>
+
+<?php } else { ?>
 
 <div class="fabrics-header">
 	<?php get_template_part( 'resources/templates/nav/nav', 'fabrics' ); ?>
@@ -77,5 +91,7 @@ $template_data = [
 	</div>
 
 </div>
+
+					<?php } ?>
 
 <?php get_footer();

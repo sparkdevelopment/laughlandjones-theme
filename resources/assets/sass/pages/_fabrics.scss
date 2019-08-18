@@ -648,6 +648,35 @@
   }
 }
 
+.fabrics-holding {
+  display: flex;
+  flex-direction: column;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 0 5vw;
+
+  .holding-image {
+    height: 65vh;
+    margin: 5vh 0 2.5vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .holding-text {
+    max-height: 20vh;
+    text-align: center;
+    color: #66686a;
+    font-size: 1.4rem !important;
+    text-transform: uppercase;
+
+    p {
+      margin: 1rem 0;
+    }
+  }
+}
+
 @media (max-width: 1199px) and (min-width: 768px) {
   .fabrics-filters {
     .filters {
@@ -764,6 +793,17 @@
 
   h1 {
     text-align: center;
+  }
+
+  .fabrics-holding {
+    .holding-image {
+      height: 50vh;
+    }
+
+    .holding-text {
+      max-height: 40vh;
+      font-size: 1.2rem !important;
+    }
   }
 }
 

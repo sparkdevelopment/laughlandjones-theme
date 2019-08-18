@@ -23,6 +23,30 @@ function lj_register_options_submenu_for_page_post_type() {
 		// 'save_button'     => esc_html__( 'Save Theme Options', 'cmb2' ), // The text for the options-page save button. Defaults to 'Save'.
 		// 'disable_settings_errors' => true, // On settings pages (not options-general.php sub-pages), allows disabling.
 		// 'message_cb'      => 'lj_options_page_message_callback',
+		'vertical_tabs' => true,
+		'tabs' => [
+			[
+				'id'     => 'content',
+				'icon'   => 'dashicons-admin-generic',
+				'title'  => 'Content',
+				'fields' => [
+					'lj_fabrics_intro',
+					'lj_fabrics_featured1',
+					'lj_fabrics_featured2',
+					'lj_fabrics_featured3',
+				],
+			],
+			[
+				'id'     => 'holding-page',
+				'icon'   => 'dashicons-visibility',
+				'title'  => 'Holding Page',
+				'fields' => [
+					'lj_fabrics_holding_enable',
+					'lj_fabrics_holding_image',
+					'lj_fabrics_holding_text',
+				],
+			],
+		],
 	) );
 
 	$cmb->add_field( array(
@@ -70,6 +94,24 @@ function lj_register_options_submenu_for_page_post_type() {
 			'hide_empty' => true,
 		),
 	) );
+
+	$cmb->add_field( [
+		'name' => 'Enable Holding Page',
+		'id'   => 'lj_fabrics_holding_enable',
+		'type' => 'switch',
+	] );
+
+	$cmb->add_field( [
+		'name' => 'Image',
+		'id'   => 'lj_fabrics_holding_image',
+		'type' => 'file'
+	] );
+
+	$cmb->add_field( [
+		'name' => 'Text',
+		'id'   => 'lj_fabrics_holding_text',
+		'type' => 'textarea',
+	] );
 }
 add_action( 'cmb2_admin_init', 'lj_register_options_submenu_for_page_post_type' );
 
