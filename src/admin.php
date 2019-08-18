@@ -128,3 +128,9 @@ if( !class_exists( 'CMB2_Switch_Button' ) ) {
     }
     $cmb2_switch_button = new CMB2_Switch_Button();
 }
+
+add_filter('comet_cache_wp_htaccess_nginx_notice', '__comet_cache_wp_htaccess_nginx_notice', 10, 0);
+
+function __comet_cache_wp_htaccess_nginx_notice() {
+    return TRUE; // Yes, disable the Nginx htaccess notice
+}
