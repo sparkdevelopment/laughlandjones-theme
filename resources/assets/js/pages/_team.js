@@ -23,7 +23,7 @@ class Who {
     })
 
     if (this.NumbersSection && this.Numbers) {
-      this.NumbersTimeout = setInterval(this.checkScrollTop(), 100)
+      this.NumbersTimeout = setInterval(this.checkScrollTop.bind(this), 100)
     }
   }
 
