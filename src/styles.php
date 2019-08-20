@@ -19,7 +19,7 @@ if ( ! function_exists( 'tonik_register_styles' ) ) {
 	 */
 	function tonik_register_styles() {
 		// Get version from Heroku or default to manual versioning
-		$version = getenv( 'SOURCE_VERSION', 'v1.0' );
+		$version = getenv( 'SOURCE_VERSION' );
 
 		wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/public/css/app.css', [], $version );
 		wp_enqueue_style( 'swiper', get_template_directory_uri() . '/node_modules/swiper/dist/css/swiper.min.css', [], $version );

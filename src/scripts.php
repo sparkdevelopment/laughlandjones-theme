@@ -19,7 +19,7 @@ if ( ! function_exists( 'lj_register_scripts' ) ) {
 	 */
 	function lj_register_scripts() {
 		// Get version from Heroku or default to manual versioning
-		$version = getenv( 'SOURCE_VERSION', 'v1.0' );
+		$version = getenv( 'SOURCE_VERSION' );
 
 		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/public/js/main.js', array( 'jquery','swiper' ), $version, true );
 		wp_enqueue_script( 'swiper', get_template_directory_uri() . '/node_modules/swiper/dist/js/swiper.min.js', array( 'jquery' ), $version, true );
