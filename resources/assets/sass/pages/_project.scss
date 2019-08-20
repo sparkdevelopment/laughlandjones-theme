@@ -164,6 +164,20 @@
 
       width: 100%;
       overflow: hidden;
+
+      &.lfw,
+      &.ll,
+      &.lp,
+      &.pl,
+      &.pp,
+      &.ppp,
+      &.p {
+        img {
+          @include prdb;
+
+          width: 100%;
+        }
+      }
     }
 
     img {
@@ -183,20 +197,6 @@
       @include opacityz(1);
 
       transform: scale(1);
-    }
-
-    &.lfw,
-    &.ll,
-    &.lp,
-    &.pl,
-    &.pp,
-    &.ppp,
-    &.p {
-      img {
-        @include prdb;
-
-        width: 100%;
-      }
     }
   }
 
