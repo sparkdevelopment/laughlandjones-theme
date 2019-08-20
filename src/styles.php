@@ -18,12 +18,15 @@ if ( ! function_exists( 'tonik_register_styles' ) ) {
 	 * @return void
 	 */
 	function tonik_register_styles() {
-		wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/public/css/app.css' );
-		wp_enqueue_style( 'swiper', get_template_directory_uri() . '/node_modules/swiper/dist/css/swiper.min.css' );
+		// Get version from Heroku or default to manual versioning
+		$version = getenv( 'SOURCE_VERSION', 'v1.0' );
+
+		wp_enqueue_style( 'theme-style', get_template_directory_uri() . '/public/css/app.css', [], $version );
+		wp_enqueue_style( 'swiper', get_template_directory_uri() . '/node_modules/swiper/dist/css/swiper.min.css', [], $version );
 
 		if ( is_post_type_archive( 'fabric' ) || is_tax( 'fabric_collection' ) || is_singular( 'fabric' ) ) {
-			wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.css', [ 'theme-style' ] );
-			wp_enqueue_style( 'bootstrap-multiselect', get_template_directory_uri() . '/node_modules/bootstrap-multiselect/dist/css/bootstrap-multiselect.css' );
+			wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.css', [ 'theme-style' ], $version );
+			wp_enqueue_style( 'bootstrap-multiselect', get_template_directory_uri() . '/node_modules/bootstrap-multiselect/dist/css/bootstrap-multiselect.css', [], $version );
 		}
 	}
 }

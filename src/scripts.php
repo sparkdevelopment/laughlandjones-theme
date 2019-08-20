@@ -18,12 +18,15 @@ if ( ! function_exists( 'lj_register_scripts' ) ) {
 	 * @return void
 	 */
 	function lj_register_scripts() {
-		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/public/js/main.js', array( 'jquery','swiper' ), null, true );
-		wp_enqueue_script( 'swiper', get_template_directory_uri() . '/node_modules/swiper/dist/js/swiper.min.js', array( 'jquery' ), null, true );
-		wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/node_modules/lazysizes/lazysizes.min.js', array(), null, true );
-		wp_enqueue_script( 'lazysizes.unveilhooks', get_template_directory_uri() . '/node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js', array( 'lazysizes' ), null, true );
-		wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), null, true );
-		wp_enqueue_script( 'bootstrap-multiselect', get_template_directory_uri() . '/node_modules/bootstrap-multiselect/dist/js/bootstrap-multiselect.js', array( 'bootstrap','jquery' ), null, true );
+		// Get version from Heroku or default to manual versioning
+		$version = getenv( 'SOURCE_VERSION', 'v1.0' );
+
+		wp_enqueue_script( 'theme-script', get_template_directory_uri() . '/public/js/main.js', array( 'jquery','swiper' ), $version, true );
+		wp_enqueue_script( 'swiper', get_template_directory_uri() . '/node_modules/swiper/dist/js/swiper.min.js', array( 'jquery' ), $version, true );
+		wp_enqueue_script( 'lazysizes', get_template_directory_uri() . '/node_modules/lazysizes/lazysizes.min.js', array(), $version, true );
+		wp_enqueue_script( 'lazysizes.unveilhooks', get_template_directory_uri() . '/node_modules/lazysizes/plugins/unveilhooks/ls.unveilhooks.min.js', array( 'lazysizes' ), $version, true );
+		wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), $version, true );
+		wp_enqueue_script( 'bootstrap-multiselect', get_template_directory_uri() . '/node_modules/bootstrap-multiselect/dist/js/bootstrap-multiselect.js', array( 'bootstrap','jquery' ), $version, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'lj_register_scripts' );
