@@ -37,7 +37,7 @@ if ( $photo_array ) {
 
 		$photos[] = array(
 			'orientation' => $is_landscape ? 'landscape' : 'portrait',
-			'normal'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-mobile-l' : 'lj-home-mobile-p' )[0],
+			'normal'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-normal-l' : 'lj-home-normal-p' )[0],
 			'mobile'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-mobile-l' : 'lj-home-mobile-p' )[0],
 			'retina'      => wp_get_attachment_image_src( $photo_id, $is_landscape ? 'lj-home-retina-l' : 'lj-home-retina-p' )[0]
 		);
