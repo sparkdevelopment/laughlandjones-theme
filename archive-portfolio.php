@@ -7,31 +7,14 @@
 require_once get_template_directory() . '/mobile_detect.php';
 $detect = new Mobile_Detect;
 
-$projects = [
-	[
-		'feature_image' => [
-			'orientation' => 'landscape',
-			'image' => [
-				'url' => [
-					'normal' => 'http://laughland-jones.s3.amazonaws.com/production/33/699/normal/barbaredited4.jpg?1485517449'
-				]
-			]
-		],
-		'slug' => 'chalet-babar',
-		'title' => 'Chalet Babar',
-		'location' => 'Verbier, Switzerland',
-		'client' => 'Private Client',
-		'description' => "Appointed for architectural and interior design. 400 square metres, 5 bedrooms. Winner of the global 'Best Ski Chalet' award at the International Hotel and Property awards in 2016."
-	]
-];
-
 $projects_query = new WP_Query( array(
 	'post_type'   => 'portfolio',
 	'nopaging'    => true,
 	'post_status' => 'publish',
-	'orderby'     => 'menu_order',
-	'order'       => 'ASC',
+	// 'orderby'     => 'menu_order',
+	// 'order'       => 'ASC',
 ));
+
 $projects = array();
 
 foreach ( $projects_query->posts as $project ) {
@@ -44,9 +27,9 @@ foreach ( $projects_query->posts as $project ) {
 		$projects[] = array(
 			'slug'          => $project->post_name,
 			'title'         => $project->post_title,
-			'location'      => $project_meta['location'][0],
-			'client'        => $project_meta['client'][0],
-			'description'   => $project_meta['description'][0],
+			'location'      => $project_meta['location'][0] ?? '',
+			'client'        => $project_meta['client'][0] ?? '',
+			'description'   => $project_meta['description'][0] ?? '',
 			'feature_image' => array(
 				'orientation' => $is_landscape ? 'landscape' : 'portrait',
 				'image' => array(
