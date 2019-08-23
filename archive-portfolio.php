@@ -20,7 +20,9 @@ $projects = array();
 foreach ( $projects_query->posts as $project ) {
 	$project_meta = get_post_meta($project->ID);
 
-	if ( isset( $project_meta['photo_id'] ) ) {
+	$status = wp_get_post_terms( $project->ID, 'portfolio_entry_status' )[0]->slug ?? '';
+
+	if ( isset( $project_meta['photo_id'] ) && 'completed' === $status ) {
 		$imgmeta = wp_get_attachment_metadata( $project_meta['photo_id'][0] );
 		$is_landscape = $imgmeta['width'] > $imgmeta['height'];
 

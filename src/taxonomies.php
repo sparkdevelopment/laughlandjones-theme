@@ -18,7 +18,7 @@ if ( ! function_exists( 'lj_register_portfolio_entry_status_taxonomy' ) ) {
 	 */
 	function lj_register_portfolio_entry_status_taxonomy() {
 		register_taxonomy('portfolio_entry_status','portfolio',array(
-			'hierarchical' => false,
+			'hierarchical' => true,
 			'rewrite' => false,
 			'labels' => array(
 				'name'                       => _x( 'Portfolio Item Status', 'taxonomy general name', 'lj' ),
