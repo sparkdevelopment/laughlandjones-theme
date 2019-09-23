@@ -35,5 +35,6 @@
 
 <body <?php body_class(); ?>>
 	<?php get_template_part( 'resources/templates/parts/parts', 'subscribe-modal' ); ?>
+	<?php get_template_part( 'resources/templates/parts/parts', 'notify-modal' ); ?>
 	<?php get_template_part( 'resources/templates/parts/parts', 'subscribe' ); ?>
 	<?php get_template_part( 'resources/templates/parts/parts', 'header' ); ?>

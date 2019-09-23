@@ -42,32 +42,6 @@ function get_fabric_meta( $post_id = false ) {
 	return $meta;
 }
 
-function get_variations( $post_id = false ) {
-	$variations = [];
-
-	$variation_meta = get_post_meta( $post_id, 'lj_variations', true );
-
-	if ( $variation_meta ) {
-
-		foreach ( $variation_meta as $variation ) {
-			$variation_array = [
-				'no'        => $variation['variation_no'],
-				'image_url' => $variation['image'],
-				'colours'   => []
-			];
-
-			foreach( $variation['colour'] as $colour ) {
-				$variation_array['colours'][ get_term_field( 'name', $colour, 'fabric_colour', 'string') ] = get_term_meta( $colour, 'lj_colour_code', true );
-			}
-
-			$variations[] = $variation_array;
-		}
-
-	}
-
-	return $variations;
-}
-
 function get_siblings( $post_id = false, $collection_id = false ) {
 	if ( false === $post_id || false === $collection_id ) {
 		return;
@@ -96,8 +70,6 @@ function get_siblings( $post_id = false, $collection_id = false ) {
 	return $siblings;
 }
 
-// var_dump( $template_data ); die;
-
 get_header();
 
 ?>
@@ -107,20 +79,23 @@ get_header();
 </script>
 
 <div class="fabrics-header">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-6 breadcrumbs">
+				<div class="container">
+					<ul>
+						<li><a href="<?php echo esc_url( get_site_url() . '/fabrics' ); ?>">Fabrics</a></li>
+						<li>
+							<a href="<?php echo esc_url( get_term_link( $template_data['collection']->term_id, 'fabric_collection' ) ); ?>"><?php echo esc_html( $template_data['collection']->name ); ?></a>
+						</li>
+						<li><?php the_title(); ?></li>
+					</ul>
+				</div>
+			</div>
 
-	<div class="breadcrumbs">
-		<div class="container">
-			<ul>
-				<li><a href="<?php echo esc_url( get_site_url() . '/fabrics' ); ?>">Fabrics</a></li>
-				<li>
-					<a href="<?php echo esc_url( get_term_link( $template_data['collection']->term_id, 'fabric_collection' ) ); ?>"><?php echo esc_html( $template_data['collection']->name ); ?></a>
-				</li>
-				<li><?php the_title(); ?></li>
-			</ul>
+			<div class="col-sm-12 col-md-6 basket"></div>
 		</div>
 	</div>
-
-	<div class="basket"></div>
 </div>
 
 <div class="fabrics fabric-page">
@@ -158,7 +133,7 @@ get_header();
 							<?php foreach ( $template_data['meta'] as $label => $meta ) { ?>
 								<tr>
 									<th><?php echo esc_html( $label ); ?></th>
-									<td id="fabric-<?php esc_attr_e( str_replace( ' ', '-', strtolower( $label ) ) ); ?>"><?php echo esc_html( $meta ); ?></td>
+									<td id="fabric-<?php esc_attr_e( str_replace( ' ', '-', strtolower( $label ) ) ); ?>" class="fabric-<?php esc_attr_e( str_replace( ' ', '-', strtolower( $label ) ) ); ?>"><?php echo esc_html( $meta ); ?></td>
 								</tr>
 							<?php } ?>
 							<tr>
@@ -178,9 +153,9 @@ get_header();
 					</table>
 
 
-					<a id="add-to-cart" class="add-to-cart visible" href="javascript:;">Request swatch sample
-						<span>-</span> Add to bag</a>
-					<a id="remove-from-cart" class="remove-from-cart" href="javascript:;">Remove from bag</a>
+					<a id="add-to-cart" class="add-to-cart visible" href="javascript:;" data-id="<?php echo esc_attr( $fabric_id ); ?>" data-variation="0">Request swatch sample
+						<span>-</span> Add to basket</a>
+					<a id="remove-from-cart" class="remove-from-cart" data-id="<?php echo esc_attr( $fabric_id ); ?>" data-variation="0" href="javascript:;">Remove from basket</a>
 					<a id="full-repeat-no-link" class="remove-from-cart" href="javascript:;">Full Repeat</a>
 				</div>
 				<div class="col-sm-12 col-md-4 col-colors">

@@ -225,6 +225,7 @@
     height: auto;
 
     h1 {
+      color: #212529;
       margin: 20px 0;
     }
   }
@@ -481,6 +482,11 @@
 .fabrics-header {
   font-size: 12px;
 
+  .breadcrumbs-basker-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .breadcrumbs,
   .basket {
     padding: .5rem 0;
@@ -497,9 +503,10 @@
 
       li {
         display: inline-block;
-        color: #66686a;
+        color: #66686a !important;
 
         a {
+          color: #66686a !important;
           display: inline-block;
 
           &::after {
@@ -514,6 +521,8 @@
 
   .basket {
     text-align: right;
+    padding-left: 15px;
+    padding-right: 15px;
 
     a {
       background-image: url("#{$imagePath}basket.svg");
@@ -677,6 +686,68 @@
   }
 }
 
+.basket-contents {
+  margin: 0 0 30px;
+  padding: 57px 0 27px;
+
+  .basket-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+    li {
+      width: 33%;
+      color: #66686a;
+      display: block;
+      margin: 0;
+      padding: 8px 8px 30px;
+
+      a,
+      a:visited {
+        color: #66686a;
+        text-decoration: none;
+        border-bottom: 1px solid #e5e4e4;
+      }
+
+      .image {
+        display: block;
+        width: 100%;
+        height: 360px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border: 1px solid #fff;
+      }
+
+      h3 {
+        margin: 20px 0 15px;
+        text-transform: uppercase;
+        color: #66686a;
+        font-size: 115%;
+        letter-spacing: -1px;
+      }
+
+      > div {
+        margin-bottom: 10px;
+      }
+
+      .remove-from-cart {
+        padding: 12px 5px;
+        font-size: 85%;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: -1px;
+        color: #fff;
+        background-color: #dd7a39;
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
+
 @media (max-width: 1199px) and (min-width: 768px) {
   .fabrics-filters {
     .filters {
@@ -803,6 +874,21 @@
     .holding-text {
       max-height: 40vh;
       font-size: 1.2rem !important;
+    }
+  }
+
+  #basket {
+    background-color: #fff;
+  }
+
+  .basket-contents {
+    padding: 20px 0 0;
+    margin: 0;
+
+    .basket-list {
+      li {
+        width: 100%;
+      }
     }
   }
 }

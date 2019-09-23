@@ -32,7 +32,7 @@ class App {
     if ($('#portfolio').length) { this.portfolio = new Portfolio() }
     if ($('#project').length) { this.project = new Project() }
     if ($('#who').length) { this.team = new Team() }
-    if ($('body.single-fabric').length) { this.fabric = new Fabric() }
+    if ($('body.single-fabric').length || $('.page-template-template-basket').length) { this.fabric = new Fabric() }
     if ($('body.post-type-archive-fabric').length) { this.fabric = new Fabric() }
 
     mobile.addClass()

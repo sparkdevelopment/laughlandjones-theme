@@ -44,20 +44,24 @@ $template_data = [
 <div class="fabrics-header">
 	<?php get_template_part( 'resources/templates/nav/nav', 'fabrics' ); ?>
 
-	<div class="breadcrumbs">
-		<div class="container">
-			<ul>
-				<li>
-					<a href="<?php echo esc_url( get_site_url() . '/fabrics' ); ?>">Fabrics</a>
-				</li>
-				<li>
-					<?php echo esc_html( $template_data['collection']['name'] ); ?>
-				</li>
-			</ul>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-6 breadcrumbs">
+				<div class="container">
+					<ul>
+						<li>
+							<a href="<?php echo esc_url( get_site_url() . '/fabrics' ); ?>">Fabrics</a>
+						</li>
+						<li>
+							<?php echo esc_html( $template_data['collection']['name'] ); ?>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="col-sm-12 col-md-6 basket"></div>
 		</div>
 	</div>
-
-	<div class="basket"></div>
 </div>
 
 <div class="fabrics fabrics-collection page">

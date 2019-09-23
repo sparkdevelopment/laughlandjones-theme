@@ -135,3 +135,29 @@ function get_fabric_data( $term_id ) {
 		'url'   => get_term_link( (int) $term_id, 'fabric_collection' ),
 	];
 }
+
+function get_variations( $post_id = false, $variation_id = false ) {
+	$variations = [];
+
+	$variation_meta = get_post_meta( $post_id, 'lj_variations', true );
+
+	if ( $variation_meta ) {
+
+		foreach ( $variation_meta as $variation ) {
+			$variation_array = [
+				'no'        => $variation['variation_no'],
+				'image_url' => $variation['image'],
+				'colours'   => []
+			];
+
+			foreach( $variation['colour'] as $colour ) {
+				$variation_array['colours'][ get_term_field( 'name', $colour, 'fabric_colour', 'string') ] = get_term_meta( $colour, 'lj_colour_code', true );
+			}
+
+			$variations[] = $variation_array;
+		}
+
+	}
+
+	return $variation_id === false ? $variations : $variations[ $variation_id ];
+}

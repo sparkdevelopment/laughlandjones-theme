@@ -78,7 +78,8 @@ class Project {
           prevEl: this.left
         },
         speed: 600,
-        observer: true
+        observer: true,
+        calculateHeight: true
       })
     }
   }
