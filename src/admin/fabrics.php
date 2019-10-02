@@ -57,39 +57,42 @@ function lj_register_options_submenu_for_page_post_type() {
 	) );
 
 	$cmb->add_field( array(
-		'name'           => 'Featured collection 1',
-		'id'             => 'lj_fabrics_featured1',
-		'taxonomy'       => 'fabric_collection',
-		'type'           => 'select',
-		'remove_default' => 'false',
-		'options_cb'     => 'cmb2_get_term_options',
-		'query_args' => array(
+		'name'             => 'Featured collection 1',
+		'id'               => 'lj_fabrics_featured1',
+		'taxonomy'         => 'fabric_collection',
+		'type'             => 'select',
+		'remove_default'   => 'false',
+		'show_option_none' => true,
+		'options_cb'       => 'cmb2_get_term_options',
+		'query_args'       => array(
 			'orderby' => 'title',
 			'hide_empty' => true,
 		),
 	) );
 
 	$cmb->add_field( array(
-		'name'           => 'Featured collection 2',
-		'id'             => 'lj_fabrics_featured2',
-		'taxonomy'       => 'fabric_collection',
-		'type'           => 'select',
-		'remove_default' => 'false',
-		'options_cb'     => 'cmb2_get_term_options',
-		'query_args' => array(
+		'name'             => 'Featured collection 2',
+		'id'               => 'lj_fabrics_featured2',
+		'taxonomy'         => 'fabric_collection',
+		'type'             => 'select',
+		'remove_default'   => 'false',
+		'show_option_none' => true,
+		'options_cb'       => 'cmb2_get_term_options',
+		'query_args'       => array(
 			'orderby' => 'title',
 			'hide_empty' => true,
 		),
 	) );
 
 	$cmb->add_field( array(
-		'name'           => 'Featured collection 3',
-		'id'             => 'lj_fabrics_featured3',
-		'taxonomy'       => 'fabric_collection',
-		'type'           => 'select',
-		'remove_default' => 'false',
-		'options_cb'     => 'cmb2_get_term_options',
-		'query_args' => array(
+		'name'             => 'Featured collection 3',
+		'id'               => 'lj_fabrics_featured3',
+		'taxonomy'         => 'fabric_collection',
+		'type'             => 'select',
+		'remove_default'   => 'false',
+		'show_option_none' => true,
+		'options_cb'       => 'cmb2_get_term_options',
+		'query_args'       => array(
 			'orderby' => 'title',
 			'hide_empty' => true,
 		),

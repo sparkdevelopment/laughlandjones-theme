@@ -12,9 +12,9 @@ $template_data = [
 	],
 	'intro' => $fabric_options['lj_fabrics_intro'],
 	'featured' => [
-		1 => get_fabric_data( $fabric_options['lj_fabrics_featured1'] ),
-		2 => get_fabric_data( $fabric_options['lj_fabrics_featured2'] ),
-		3 => get_fabric_data( $fabric_options['lj_fabrics_featured3'] ),
+		1 => isset( $fabric_options['lj_fabrics_featured1'] ) ? get_fabric_data( $fabric_options['lj_fabrics_featured1'] ) : false,
+		2 => isset( $fabric_options['lj_fabrics_featured2'] ) ? get_fabric_data( $fabric_options['lj_fabrics_featured2'] ) : false,
+		3 => isset( $fabric_options['lj_fabrics_featured3'] ) ? get_fabric_data( $fabric_options['lj_fabrics_featured3'] ) : false,
 	],
 ];
 
@@ -54,12 +54,14 @@ $template_data = [
 
 			<div class="highlights-container">
 				<?php for ($i=1; $i <= 3 ; $i++) { ?>
-				<div class="highlight">
-					<a href="<?php echo esc_url( $template_data['featured'][ $i ]['url'] ); ?>">
-						<div class="label"><?php echo esc_html( $template_data['featured'][ $i ]['name'] ); ?></div>
-						<i style="background-image:url(<?php echo esc_url( $template_data['featured'][ $i ]['image'] ); ?>)"></i>
-					</a>
-				</div>
+					<?php if ( $template_data['featured'][ $i ] ) { ?>
+					<div class="highlight">
+						<a href="<?php echo esc_url( $template_data['featured'][ $i ]['url'] ); ?>">
+							<div class="label"><?php echo esc_html( $template_data['featured'][ $i ]['name'] ); ?></div>
+							<i style="background-image:url(<?php echo esc_url( $template_data['featured'][ $i ]['image'] ); ?>)"></i>
+						</a>
+					</div>
+					<?php } ?>
 				<?php } ?>
 			</div>
 		</div>

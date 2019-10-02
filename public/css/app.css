@@ -1904,7 +1904,7 @@ footer {
       -ms-flex: 1 0 auto;
       flex: 1 0 auto;
       height: auto;
-      width: 30%; }
+      max-width: 30%; }
       .fabrics-archive .highlights-container .highlight::before {
         content: "";
         float: left;
