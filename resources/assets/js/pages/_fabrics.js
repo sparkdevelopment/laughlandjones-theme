@@ -25,13 +25,12 @@ class Fabric {
 
       $('.remove-from-cart').on('click', (e) => {
         e.preventDefault()
-        if ($('#basket').length) {
-          self.notify('Pattern ' + $('e.currentTarget').parent().find('.fabric-pattern-number').html() + ' removed from basket')
-        } else {
-          self.notify('Pattern removed from basket')
-        }
+        self.notify('Pattern removed from basket')
         self.removeFromBasket(self, e.currentTarget)
         self.updateButtons(self)
+        if (!$('#basket-list li').length) {
+          $('#basket-list').replaceWith('<div class="empty-basket">Basket is empty. Please visit our <a href="' + window.location.protocol + '//' + window.location.hostname + '/fabrics">Fabrics</a> page.</div>')
+        }
       })
     })
 
