@@ -12,7 +12,7 @@ function lj_send_email() {
 	wp_mail( $to_address, $subject, $message, ['Content-Type: text/html; charset=UTF-8'] );
 
 	echo wp_json_encode([
-		'brochure' => $_REQUEST['contact']['portfolio']
+		'brochure' => $_REQUEST['contact']['portfolio'] === "true"
 	]);
 
 	wp_die();
