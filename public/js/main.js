@@ -9271,6 +9271,8 @@ var Subscribe = function () {
   }, {
     key: 'doSubscribe',
     value: function doSubscribe() {
+      var self = this;
+
       if (!this.validation.bind(this)) {
         this.subscribeThrottle = false;
         return;
@@ -9289,39 +9291,42 @@ var Subscribe = function () {
         // return console.log contact
 
       };$.ajax({
-        'url': '/subscribe',
         'type': 'post',
-        'data': { contact: contact }
+        'dataType': 'json',
+        'url': window.lj_ajax.url,
+        'data': { 'action': 'lj_send_email', contact: contact }
       }).success(function (res) {
-        this.handleSuccess(res);
+        self.handleSuccess(res);
       }).error(function (e) {
-        this.handleError(e);
+        self.handleError(e);
       });
     }
   }, {
     key: 'handleSuccess',
     value: function handleSuccess(res) {
+      var self = this;
+
       TweenLite.to(this.subscribeContent, 0.7, { opacity: 0 });
 
       setTimeout(function () {
-        TweenLite.set(this.subscribeContent, { display: 'none' });
-        TweenLite.set(this.thanksContent, { display: 'block' });
+        TweenLite.set(self.subscribeContent, { display: 'none' });
+        TweenLite.set(self.thanksContent, { display: 'block' });
 
         setTimeout(function () {
-          TweenLite.to(this.thanksContent, 0.7, { opacity: 1 });
-
+          TweenLite.to(self.thanksContent, 0.7, { opacity: 1 });
+          console.log(res);
           if (res.brochure) {
-            TweenLite.to(this.downloadGraphic, 0.7, { opacity: 1, scale: 1, ease: Bounce.easeOut }).delay(0.6);
+            TweenLite.to(self.downloadGraphic, 0.7, { opacity: 1, scale: 1, ease: Bounce.easeOut }).delay(0.6);
           } else {
-            TweenLite.to(this.thanksGraphic, 0.7, { opacity: 1, scale: 1, ease: Bounce.easeOut }).delay(0.6);
+            TweenLite.to(self.thanksGraphic, 0.7, { opacity: 1, scale: 1, ease: Bounce.easeOut }).delay(0.6);
           }
         }, 10);
 
-        this.subscribeCta.remove();
+        self.subscribeCta.remove();
 
         if (!res.brochure) {
           setTimeout(function () {
-            this.hideForm();
+            self.hideForm();
           }, 3000);
         }
       }, 700);
