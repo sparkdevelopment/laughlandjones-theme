@@ -1,7 +1,7 @@
 <?php
 
 function lj_send_email() {
-	$to_address = 'ryanajarrett@gmail.com';
+	$to_address = 'cloth@laughlandjones.co.uk';
 	$subject = 'Website Contact';
 
 	$message = 'Name: ' . $_REQUEST['contact']['name'] . '<br>'
