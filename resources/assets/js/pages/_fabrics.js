@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import Swiper from 'swiper'
 import Cookies from 'js-cookie'
 
 class Fabric {
@@ -32,6 +33,8 @@ class Fabric {
           $('#basket-list').replaceWith('<div class="empty-basket">Basket is empty. Please visit our <a href="' + window.location.protocol + '//' + window.location.hostname + '/fabrics">Fabrics</a> page.</div>')
         }
       })
+
+      self.doSlideshow()
     })
 
     self.updateButtons(self)
@@ -159,6 +162,22 @@ class Fabric {
     // Add click handler
     $notifyModal.on('click', '.button-ok', () => {
       $notifyModalWrap.css('display', 'none')
+    })
+  }
+
+  doSlideshow () {
+    this.SWIPERZ = new Swiper($('#master-slideshow'), {
+      loop: true,
+      effect: 'slide',
+      speed: 900,
+      //  autoplay: 5000,
+      swipe: false,
+      noSwiping: true,
+      noSwipingClass: 'sector',
+      navigation: {
+        nextEl: $('#right-arrow'),
+        prevEl: $('#left-arrow')
+      }
     })
   }
 }

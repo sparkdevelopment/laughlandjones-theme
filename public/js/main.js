@@ -18405,6 +18405,8 @@ var Fabric = function () {
           $('#basket-list').replaceWith('<div class="empty-basket">Basket is empty. Please visit our <a href="' + window.location.protocol + '//' + window.location.hostname + '/fabrics">Fabrics</a> page.</div>');
         }
       });
+
+      self.doSlideshow();
     });
 
     self.updateButtons(self);
@@ -18542,6 +18544,23 @@ var Fabric = function () {
       // Add click handler
       $notifyModal.on('click', '.button-ok', function () {
         $notifyModalWrap.css('display', 'none');
+      });
+    }
+  }, {
+    key: 'doSlideshow',
+    value: function doSlideshow() {
+      this.SWIPERZ = new Swiper($('#master-slideshow'), {
+        loop: true,
+        effect: 'slide',
+        speed: 900,
+        //  autoplay: 5000,
+        swipe: false,
+        noSwiping: true,
+        noSwipingClass: 'sector',
+        navigation: {
+          nextEl: $('#right-arrow'),
+          prevEl: $('#left-arrow')
+        }
       });
     }
   }]);
