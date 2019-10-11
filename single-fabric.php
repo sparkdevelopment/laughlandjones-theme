@@ -15,11 +15,15 @@ $template_data = [
 ?>
 
 <script type="text/javascript">
-	window.fabricImages = [];
+	window.fabricImages = [{
+		src: '<?php echo esc_url( $template_data['image'] ); ?>'
+	}];
 	<?php foreach( $template_data['variations'] as $index => $variation ) { ?>
-		window.fabricImages.push({
-			src: '<?php echo esc_url( $variation['image_url'] ); ?>'
-		});
+		if ( '<?php echo esc_url( $variation['image_url'] ); ?>' !== window.fabricImages[0].src ) {
+			window.fabricImages.push({
+				src: '<?php echo esc_url( $variation['image_url'] ); ?>'
+			});
+		}
 	<?php } ?>
 </script>
 
