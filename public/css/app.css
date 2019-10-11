@@ -1885,6 +1885,9 @@ footer {
             -webkit-transition-duration: .3s;
             -o-transition-duration: .3s;
             transition-duration: .3s; }
+    .fabrics-archive .highlights-section .fabrics-intro,
+    .fabrics-archive .all-section .fabrics-intro {
+      text-align: center; }
   .fabrics-archive .highlights-container {
     display: -webkit-box;
     display: -ms-flexbox;

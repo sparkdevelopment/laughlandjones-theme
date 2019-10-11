@@ -50,7 +50,7 @@ $template_data = [
 	<div class="highlights-section">
 		<div class="container">
 			<h1 class="page-header">Newest Collections</h1>
-			<?php echo wpautop( esc_html( $template_data['intro'] ) ); ?>
+			<div class="fabrics-intro"><?php echo wpautop( esc_html( $template_data['intro'] ) ); ?></div>
 
 			<div class="highlights-container">
 				<?php for ($i=1; $i <= 3 ; $i++) { ?>
