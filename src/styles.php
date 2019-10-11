@@ -28,6 +28,10 @@ if ( ! function_exists( 'tonik_register_styles' ) ) {
 			wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/node_modules/bootstrap/dist/css/bootstrap.css', [ 'theme-style' ], $version );
 			wp_enqueue_style( 'bootstrap-multiselect', get_template_directory_uri() . '/node_modules/bootstrap-multiselect/dist/css/bootstrap-multiselect.css', [], $version );
 		}
+
+		if ( is_singular('fabric') ) {
+			wp_enqueue_style( 'magnific-popup', get_template_directory_uri() . '/node_modules/magnific-popup/dist/magnific-popup.css', [ 'theme-style' ], $version );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'tonik_register_styles' );

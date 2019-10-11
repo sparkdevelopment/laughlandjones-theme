@@ -1,10 +1,12 @@
 import $ from 'jquery'
 import Swiper from 'swiper'
+import 'magnific-popup'
 import Cookies from 'js-cookie'
 
 class Fabric {
   constructor () {
     var self = this
+    this.originalFabricImages = window.fabricImages
 
     this.cookieName = 'lj-basket'
 
@@ -34,8 +36,10 @@ class Fabric {
         }
       })
 
-      self.doSlideshow()
+      self.initSlideshow()
     })
+
+    $('#current-design').on('click', self.previewFabrics)
 
     self.updateButtons(self)
   }
@@ -139,6 +143,8 @@ class Fabric {
 
     // Update cart buttons
     self.updateButtons(self)
+
+    window.fabricImages = self.arrayRotate(self.originalFabricImages, false, currentIndex)
   }
 
   notify (message) {
@@ -165,7 +171,7 @@ class Fabric {
     })
   }
 
-  doSlideshow () {
+  initSlideshow () {
     this.SWIPERZ = new Swiper($('#master-slideshow'), {
       loop: true,
       effect: 'slide',
@@ -179,6 +185,25 @@ class Fabric {
         prevEl: $('#left-arrow')
       }
     })
+  }
+
+  previewFabrics () {
+    $('#current-design').magnificPopup({
+      type: 'image',
+      gallery: {
+        enabled: true
+      },
+      items: window.fabricImages
+    }).magnificPopup('open')
+  }
+
+  arrayRotate (arr, reverse, count) {
+    count = count || 1
+    for (let index = 0; index < count; index++) {
+      if (reverse) arr.unshift(arr.pop())
+      else arr.push(arr.shift())
+    }
+    return arr
   }
 }
 

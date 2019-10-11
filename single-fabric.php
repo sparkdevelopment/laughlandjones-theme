@@ -12,7 +12,18 @@ $template_data = [
 	'siblings'   => get_siblings( $fabric_id, $collections[0]->term_id ),
 	'slides'     => get_post_meta( $fabric_id, 'lj_fabric_slideshow', true ),
 ];
+?>
 
+<script type="text/javascript">
+	window.fabricImages = [];
+	<?php foreach( $template_data['variations'] as $index => $variation ) { ?>
+		window.fabricImages.push({
+			src: '<?php echo esc_url( $variation['image_url'] ); ?>'
+		});
+	<?php } ?>
+</script>
+
+<?php
 function get_fabric_meta( $post_id = false ) {
 	if ( ! (int) $post_id ) {
 		return;
