@@ -20316,7 +20316,7 @@ var Fabric = function () {
       // Update cart buttons
       self.updateButtons(self);
 
-      window.fabricImages = self.arrayRotate(self.originalFabricImages, false, currentIndex);
+      window.fabricImages = self.arrayRotate(self.originalFabricImages, false, currentIndex + 1);
     }
   }, {
     key: 'notify',
