@@ -168,3 +168,12 @@ function lj_change_fabrics_link( $permalink, $post ) {
 
 }
 add_filter('post_type_link',"lj_change_fabrics_link",10,2);
+
+function lj_show_all_posts( $query ) {
+	if ( ! is_admin() && $query->is_main_query() ) {
+		if ( is_tax( 'portfolio_entry_status' ) || is_tax( 'fabric_collection' ) ) {
+			$query->set('posts_per_page', -1 );
+        }
+    }
+}
+add_action( 'pre_get_posts', 'lj_show_all_posts' );

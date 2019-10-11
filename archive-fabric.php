@@ -77,6 +77,7 @@ $template_data = [
 						'orderby'    => 'name',
 						'order'      => 'ASC',
 						'hide_empty' => true,
+						'nopaging'   => true,
 					]);
 					foreach( $all_collections->get_terms() as $collection ) {
 						$collection_data = get_fabric_data( $collection->term_id );
