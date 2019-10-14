@@ -20222,6 +20222,7 @@ var Fabric = function () {
       var basketOutput = '<a href="' + window.location.protocol + '//' + window.location.hostname + '/basket">BASKET <span><i id="basket-count">' + basketSize + '</i></span></a>';
 
       $basketContainer.html(basketOutput);
+      self.updateOrderForm(self);
     }
   }, {
     key: 'updateButtons',
@@ -20379,6 +20380,13 @@ var Fabric = function () {
         if (reverse) arr.unshift(arr.pop());else arr.push(arr.shift());
       }
       return arr;
+    }
+  }, {
+    key: 'updateOrderForm',
+    value: function updateOrderForm(self) {
+      if ($('.page-template-template-basket')) {
+        $('#s-cart-items').attr('value', js_cookie.get(self.cookieName));
+      }
     }
   }]);
   return Fabric;

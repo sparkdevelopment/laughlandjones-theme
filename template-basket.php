@@ -78,7 +78,13 @@ get_header();
 								<a id="remove-from-cart" class="remove-from-cart" data-id="<?php echo esc_attr( $item['id'] ); ?>" data-variation="<?php echo esc_attr( $item['variation_id'] ); ?>" href="javascript:;">Remove from basket</a>
 							</li>
 						<?php } ?>
-					</ul>
+						</ul>
+						<div class="form">
+							<?php
+							wp_reset_postdata();
+							the_content();
+							?>
+						</div>
 					<?php } else { ?>
 						<div class="empty-basket">Basket is empty. Please visit our <a href="<?php echo esc_url( get_site_url() . '/fabrics' ); ?>">Fabrics</a> page.</div>
 					<?php } ?>

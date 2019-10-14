@@ -56,6 +56,7 @@ class Fabric {
     var basketOutput = '<a href="' + window.location.protocol + '//' + window.location.hostname + '/basket">BASKET <span><i id="basket-count">' + basketSize + '</i></span></a>'
 
     $basketContainer.html(basketOutput)
+    self.updateOrderForm(self)
   }
 
   updateButtons (self) {
@@ -204,6 +205,12 @@ class Fabric {
       else arr.push(arr.shift())
     }
     return arr
+  }
+
+  updateOrderForm (self) {
+    if ($('.page-template-template-basket')) {
+      $('#s-cart-items').attr('value', Cookies.get(self.cookieName))
+    }
   }
 }
 
