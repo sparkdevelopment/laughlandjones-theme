@@ -1,6 +1,6 @@
 <?php
 
-function lj_add_contact_us_studio_metaboxes() {
+function lj_add_contact_us_studio_metabox() {
 	$metabox = new_cmb2_box( array(
 		'id'           => 'lj_contact_us_studio',
 		'title'        => __( 'Studio Contact Details', 'lj' ),
@@ -28,9 +28,9 @@ function lj_add_contact_us_studio_metaboxes() {
 		'type' => 'text_medium'
 	));
 }
-add_action( 'cmb2_admin_init', 'lj_add_contact_us_studio_metaboxes' );
+add_action( 'cmb2_admin_init', 'lj_add_contact_us_studio_metabox' );
 
-function lj_add_contact_us_warehouse_metaboxes() {
+function lj_add_contact_us_warehouse_metabox() {
 	$metabox = new_cmb2_box( array(
 		'id'           => 'lj_contact_us_warehouse',
 		'title'        => __( 'Warehouse Contact Details', 'lj' ),
@@ -59,4 +59,23 @@ function lj_add_contact_us_warehouse_metaboxes() {
 	));
 }
 
-add_action( 'cmb2_admin_init', 'lj_add_contact_us_warehouse_metaboxes' );
+add_action( 'cmb2_admin_init', 'lj_add_contact_us_warehouse_metabox' );
+
+function lj_add_contact_us_form_metabox() {
+	$metabox = new_cmb2_box( array(
+		'id'           => 'lj_contact_us_form',
+		'title'        => __( 'Contact Form', 'lj' ),
+		'object_types' => array( 'page' ),
+		'show_on'      => array( 'key' => 'page-template', 'value' => 'template-contact.php' ),
+		'context'      => 'normal',
+		'priority'     => 'high',
+	));
+
+	$metabox->add_field( array(
+		'name' => 'Form Shortcode',
+		'id'   => 'form_shortcode',
+		'type' => 'text'
+	));
+}
+
+add_action( 'cmb2_admin_init', 'lj_add_contact_us_form_metabox' );

@@ -83,6 +83,8 @@
 
 	</div>
 
+	<?php echo do_shortcode( $post->form_shortcode ); ?>
+
 </div>
 
 <?php get_footer(); ?>
