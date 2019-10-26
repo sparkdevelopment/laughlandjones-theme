@@ -29,7 +29,6 @@
 	<meta content='#dd7a39' name='msapplication-TileColor'>
 	<meta content='/images/mstile-144x144.png' name='msapplication-TileImage'>
 	<meta content='#dd7a39' name='theme-color'>
-	<title><?php wp_title( '-', true, 'right' ); ?><?php bloginfo( 'name' ); ?></title>
 	<?php wp_head(); ?>
 </head>
 
