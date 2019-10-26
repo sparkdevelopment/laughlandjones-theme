@@ -56,7 +56,7 @@ $template_data = [
 				<?php for ($i=1; $i <= 3 ; $i++) { ?>
 					<?php if ( $template_data['featured'][ $i ] ) { ?>
 					<div class="highlight">
-						<a href="<?php echo esc_url( $template_data['featured'][ $i ]['url'] ); ?>">
+						<a href="<?php echo esc_url( $template_data['featured'][ $i ]['url'] ); ?>/">
 							<div class="label"><?php echo esc_html( $template_data['featured'][ $i ]['name'] ); ?></div>
 							<i style="background-image:url(<?php echo esc_url( $template_data['featured'][ $i ]['image'] ); ?>)"></i>
 						</a>
@@ -83,7 +83,7 @@ $template_data = [
 						$collection_data = get_fabric_data( $collection->term_id );
 						?>
 						<div class="collection">
-							<a href="<?php echo esc_url( $collection_data['url'] ); ?>">
+							<a href="<?php echo esc_url( $collection_data['url'] ); ?>/">
 								<div class="label"><?php echo esc_html( $collection_data['name'] ); ?></div>
 								<i style="background-image:url(<?php echo esc_url( $collection_data['image'] ); ?>)"></i>
 							</a>

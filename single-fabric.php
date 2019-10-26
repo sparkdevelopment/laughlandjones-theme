@@ -99,9 +99,9 @@ get_header();
 			<div class="col-sm-12 col-md-6 breadcrumbs">
 				<div class="container">
 					<ul>
-						<li><a href="<?php echo esc_url( get_site_url() . '/fabrics' ); ?>">Fabrics</a></li>
+						<li><a href="<?php echo esc_url( get_site_url() . '/fabrics/' ); ?>">Fabrics</a></li>
 						<li>
-							<a href="<?php echo esc_url( get_term_link( $template_data['collection']->term_id, 'fabric_collection' ) ); ?>"><?php echo esc_html( $template_data['collection']->name ); ?></a>
+							<a href="<?php echo esc_url( get_term_link( $template_data['collection']->term_id, 'fabric_collection' ) ); ?>/"><?php echo esc_html( $template_data['collection']->name ); ?></a>
 						</li>
 						<li><?php the_title(); ?></li>
 					</ul>
@@ -241,10 +241,10 @@ get_header();
 					<ul class="designs">
 						<?php foreach( $template_data['siblings'] as $sibling ) { ?>
 						<li>
-							<a href="<?php echo esc_url( $sibling['url'] ); ?>" class="image"
+							<a href="<?php echo esc_url( $sibling['url'] ); ?>/" class="image"
 								style="background-image:url(<?php echo esc_url( $sibling['image'] ); ?>");"><i></i></a>
-							<h4><a href="<?php echo esc_url( $sibling['url'] ); ?>"><?php echo esc_html( $sibling['name'] ); ?></a></h4>
-							<div><a href="<?php echo esc_url( get_term_link( $template_data['collection']->term_id, 'fabric_collection' ) ); ?>">Collection: <?php echo esc_html( $template_data['collection']->name ); ?></a></div>
+							<h4><a href="<?php echo esc_url( $sibling['url'] ); ?>/"><?php echo esc_html( $sibling['name'] ); ?></a></h4>
+							<div><a href="<?php echo esc_url( get_term_link( $template_data['collection']->term_id, 'fabric_collection' ) ); ?>/">Collection: <?php echo esc_html( $template_data['collection']->name ); ?></a></div>
 							<div>Code Ref: <?php echo esc_html( $sibling['ref'] ); ?></div>
 						</li>
 						<?php } ?>

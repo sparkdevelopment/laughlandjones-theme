@@ -38,7 +38,7 @@ get_header();
 				<div class="col-sm-12 col-md-6 breadcrumbs">
 					<div class="container">
 						<ul>
-							<li><a href="<?php echo esc_url( get_site_url() . '/fabrics' ); ?>">Fabrics</a></li>
+							<li><a href="<?php echo esc_url( get_site_url() . '/fabrics/' ); ?>">Fabrics</a></li>
 							<li><?php the_title(); ?></li>
 						</ul>
 					</div>

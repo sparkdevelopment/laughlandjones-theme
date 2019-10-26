@@ -78,7 +78,7 @@ if ( $photo_array ) {
 		<p class="btn-text">« Slideshow »</p>
 	</div>
 
-	<a href="/portfolio" class="back-button">
+	<a href="/portfolio/" class="back-button">
 		<img src="<?php esc_attr_e( get_template_directory_uri() ) ?>/resources/assets/images/arrow-back-dark.png">
     	<p>Back</p>
 	</a>

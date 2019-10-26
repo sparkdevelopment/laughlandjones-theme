@@ -50,7 +50,7 @@ $template_data = [
 				<div class="container">
 					<ul>
 						<li>
-							<a href="<?php echo esc_url( get_site_url() . '/fabrics' ); ?>">Fabrics</a>
+							<a href="<?php echo esc_url( get_site_url() . '/fabrics/' ); ?>">Fabrics</a>
 						</li>
 						<li>
 							<?php echo esc_html( $template_data['collection']['name'] ); ?>
@@ -87,10 +87,10 @@ $template_data = [
 					<ul class="designs">
 						<?php foreach( $template_data['fabrics'] as $fabric ) { ?>
 						<li>
-							<a href="<?php echo esc_url( $fabric['url'] ); ?>" class="image"
+							<a href="<?php echo esc_url( $fabric['url'] ); ?>/" class="image"
 								style="background-image:url(<?php echo esc_url( $fabric['image'] ); ?>);"><i></i></a>
-							<h4><a href="<?php echo esc_url( $fabric['url'] ); ?>"><?php echo esc_html( $fabric['name'] ); ?></a></h4>
-							<div><a href="<?php echo esc_url( $fabric['url'] ); ?>">Collection: <?php echo esc_html( $template_data['collection']['name'] ); ?></a></div>
+							<h4><a href="<?php echo esc_url( $fabric['url'] ); ?>/"><?php echo esc_html( $fabric['name'] ); ?></a></h4>
+							<div><a href="<?php echo esc_url( $fabric['url'] ); ?>/">Collection: <?php echo esc_html( $template_data['collection']['name'] ); ?></a></div>
 							<div>Code Ref: <?php echo esc_html( $fabric['pattern'] ); ?></div>
 						</li>
 						<?php } ?>
