@@ -70,7 +70,7 @@
 			</div>
 
 			<div id="news-subscribe" class="button orange subscribe-cta prefill-subscribe">
-				<button></button>
+				<button class="button--subscribe"></button>
 				<p class="btn-text">subscribe</p>
 			</div>
 

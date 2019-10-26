@@ -9,7 +9,7 @@
 				We'll be in touch.
 			</h2>
 			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/resources/assets/images/thanks-graphic.png" alt="" id="thanks-graphic">
-			<a href="/download-brochure" id="download-link"></a>
+			<a href="/download-brochure" id="download-link" class="download-brochure"></a>
 		</div>
 		<div id="subscribe-wrap" class="sections">
 			<h2 class="cta">Thanks for your interest!</h2>
@@ -37,7 +37,7 @@
 				<input type="text" id="name-field" placeholder="enter your full name">
 				<input type="email" id="email-field" placeholder="enter your email address">
 				<div class="button orange" id="subscribe-button">
-					<button></button>
+					<button class="button--subscribe></button>
 					<p class="btn-text">Go »</p>
 				</div>
 			</form>
