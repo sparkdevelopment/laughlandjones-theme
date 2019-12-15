@@ -37,7 +37,7 @@
 				<input type="text" id="name-field" placeholder="enter your full name">
 				<input type="email" id="email-field" placeholder="enter your email address">
 				<div class="button orange" id="subscribe-button">
-					<button class="button--subscribe></button>
+					<button class="button--subscribe"></button>
 					<p class="btn-text">Go »</p>
 				</div>
 			</form>
