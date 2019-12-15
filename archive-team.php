@@ -106,8 +106,8 @@ var _Employees = <?php echo json_encode( $employees ) ?>;
 	<div class="keyline"></div>
 	<h1 class="page-header">Work With Us</h1>
 	<?php echo wpautop( $team_options['work_with_us'] ); ?>
-	<div class="button orange" id="send-cv"">
-		<button class="button--send-cv></button>
+	<div class="button orange" id="send-cv">
+		<button class="button--send-cv"></button>
 		<p class="btn-text">send cv</p>
 	</div>
 </div>
