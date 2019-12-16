@@ -98,8 +98,3 @@ function lj_add_contact_us_brochure_metabox() {
 }
 
 add_action( 'cmb2_admin_init', 'lj_add_contact_us_brochure_metabox' );
-
-add_action( 'cmb2_save_field_brochure_location', 'lj_flush_permalinks' );
-function lj_flush_permalinks() {
-	flush_rewrite_rules(true);
-}

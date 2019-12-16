@@ -11,7 +11,7 @@ include_once('admin/fabric_colour.php');
 include_once('admin/fabrics.php');
 
 add_action( 'admin_init', 'hide_editor' );
-add_action( 'init', 'add_brochure_download_permalink' );
+add_action( 'parse_request', 'add_brochure_download_permalink' );
 
 function hide_editor() {
 	// Set pages
@@ -130,10 +130,13 @@ if( !class_exists( 'CMB2_Switch_Button' ) ) {
     $cmb2_switch_button = new CMB2_Switch_Button();
 }
 
-function add_brochure_download_permalink() {
-	$contact_page = get_page_by_title('Contact Us');
-	$brochure_location = get_post_meta($contact_page->ID, 'brochure_location', true );
-	$brochure_location_relative = str_replace( site_url('/'), '', $brochure_location );
+function add_brochure_download_permalink( $wp ) {
+    if ( preg_match( '#^download-brochure/?#', $wp->request, $matches ) ) {
+		$contact_page = get_page_by_title('Contact Us');
+		$brochure_location = get_post_meta($contact_page->ID, 'brochure_location', true );
 
-	add_rewrite_rule( 'download-brochure/?', $brochure_location_relative, 'top' );
+        wp_redirect( $brochure_location );
+
+        exit; // and exit
+    }
 }
