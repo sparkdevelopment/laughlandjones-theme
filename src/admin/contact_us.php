@@ -79,3 +79,22 @@ function lj_add_contact_us_form_metabox() {
 }
 
 add_action( 'cmb2_admin_init', 'lj_add_contact_us_form_metabox' );
+
+function lj_add_contact_us_brochure_metabox() {
+	$metabox = new_cmb2_box( array(
+		'id'           => 'lj_contact_us_brochure',
+		'title'        => __( 'Brochure Download', 'lj' ),
+		'object_types' => array( 'page' ),
+		'show_on'      => array( 'key' => 'page-template', 'value' => 'template-contact.php' ),
+		'context'      => 'normal',
+		'priority'     => 'high',
+	));
+
+	$metabox->add_field( array(
+		'name' => 'Brochure file',
+		'id'   => 'brochure_location',
+		'type' => 'file'
+	));
+}
+
+add_action( 'cmb2_admin_init', 'lj_add_contact_us_brochure_metabox' );
