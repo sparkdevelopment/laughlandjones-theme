@@ -37,6 +37,15 @@ function lj_register_options_submenu_for_page_post_type() {
 				],
 			],
 			[
+				'id'     => 'redirect',
+				'icon'   => 'dashicons-arrow-right-alt',
+				'title'  => 'Redirect',
+				'fields' => [
+					'lj_fabrics_redirect_enable',
+					'lj_fabrics_redirect_collection',
+				],
+			],
+			[
 				'id'     => 'holding-page',
 				'icon'   => 'dashicons-visibility',
 				'title'  => 'Holding Page',
@@ -115,6 +124,27 @@ function lj_register_options_submenu_for_page_post_type() {
 		'id'   => 'lj_fabrics_holding_text',
 		'type' => 'textarea',
 	] );
+
+	$cmb->add_field( [
+		'name' => 'Enable Collection Redirect',
+		'id'   => 'lj_fabrics_redirect_enable',
+		'type' => 'switch',
+		'description' => 'If enabled, allows you to redirect the Fabrics landing page to a single collection',
+	] );
+
+	$cmb->add_field( array(
+		'name'             => 'Collection',
+		'id'               => 'lj_fabrics_redirect_collection',
+		'taxonomy'         => 'fabric_collection',
+		'type'             => 'select',
+		'remove_default'   => 'false',
+		'show_option_none' => true,
+		'options_cb'       => 'cmb2_get_term_options',
+		'query_args'       => array(
+			'orderby' => 'title',
+			'hide_empty' => true,
+		),
+	) );
 }
 add_action( 'cmb2_admin_init', 'lj_register_options_submenu_for_page_post_type' );
 

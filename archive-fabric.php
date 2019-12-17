@@ -1,10 +1,12 @@
 <?php
 
-get_header();
-
 $fabric_options = get_option( 'lj_fabric_options' );
 
 $template_data = [
+	'redirect'     => [
+		'enabled'     => $fabric_options['lj_fabrics_redirect_enable'] ?? false,
+		'destination' => isset( $fabric_options['lj_fabrics_redirect_collection'] ) ? get_fabric_data( $fabric_options['lj_fabrics_redirect_collection'] ) : false,
+	],
 	'holding_page' => [
 		'enabled' => $fabric_options['lj_fabrics_holding_enable'] ?? false,
 		'image'   => $fabric_options['lj_fabrics_holding_image'],
@@ -17,6 +19,13 @@ $template_data = [
 		3 => isset( $fabric_options['lj_fabrics_featured3'] ) ? get_fabric_data( $fabric_options['lj_fabrics_featured3'] ) : false,
 	],
 ];
+
+// Redirect if enabled
+if ( $template_data['redirect']['enabled'] && $template_data['redirect']['destination'] ) {
+	wp_redirect( $template_data['redirect']['destination']['url'] );
+}
+
+get_header();
 
 ?>
 
