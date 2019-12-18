@@ -20172,6 +20172,7 @@ var Fabric = function () {
     this.originalFabricImages = window.fabricImages;
 
     this.cookieName = 'lj-basket';
+    this.cookieNameHtml = 'lj-basket-html';
 
     if (navigator.cookieEnabled) this.initBasket(self);
 
@@ -20385,7 +20386,7 @@ var Fabric = function () {
     key: 'updateOrderForm',
     value: function updateOrderForm(self) {
       if ($('.page-template-template-basket')) {
-        $('#s-cart-items').attr('value', js_cookie.get(self.cookieName));
+        $('#s-cart-items').attr('value', unescape(js_cookie.get(self.cookieNameHtml)).replace(/\+/g, ' '));
       }
     }
   }]);

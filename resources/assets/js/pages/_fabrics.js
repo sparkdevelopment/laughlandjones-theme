@@ -9,6 +9,7 @@ class Fabric {
     this.originalFabricImages = window.fabricImages
 
     this.cookieName = 'lj-basket'
+    this.cookieNameHtml = 'lj-basket-html'
 
     if (navigator.cookieEnabled) this.initBasket(self)
 
@@ -209,7 +210,7 @@ class Fabric {
 
   updateOrderForm (self) {
     if ($('.page-template-template-basket')) {
-      $('#s-cart-items').attr('value', Cookies.get(self.cookieName))
+      $('#s-cart-items').attr('value', unescape(Cookies.get(self.cookieNameHtml)).replace(/\+/g, ' '))
     }
   }
 }

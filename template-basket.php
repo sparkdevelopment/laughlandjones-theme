@@ -6,14 +6,12 @@
 * @subpackage Laughland Jones
 * @since Laughland Jones 1.0
 */
-?>
-
-<?php
 
 // Get template data
 $basket_contents = json_decode( wp_unslash( $_COOKIE['lj-basket'] ?? null ) ) ?? [];
 
 $requested = [];
+$basket_lines = '';
 foreach ($basket_contents as $basket_item ) {
 	$requested[] = [
 		'id'           => $basket_item->fabric,
@@ -24,8 +22,13 @@ foreach ($basket_contents as $basket_item ) {
 		'variation_id' => $basket_item->variation,
 		'variation'    => get_variations( $basket_item->fabric, $basket_item->variation ),
 	];
+	$basket_lines .= '
+		Design: ' . get_the_title( $basket_item->fabric ) . '; Color: ' . get_variations( $basket_item->fabric, $basket_item->variation )['no'] . '; Pattern: '  . get_post_meta( $basket_item->fabric, 'lj_pattern' )[0] . ';';
 }
-// var_dump($requested);die;
+
+// Set HTML to be echoed in form
+setcookie( 'lj-basket-html', $basket_lines );
+
 get_header();
 
 ?>
@@ -72,7 +75,7 @@ get_header();
 									<a href="<?php echo esc_url( get_term_link( $item['collection']->term_id, 'fabric_collection' ) ); ?>">Collection: <?php echo esc_html( $item['collection']->name ); ?></a>
 								</h3>
 								<div>
-									<a href="<?php echo esc_url( $item['url'] . '/?variaton=' . $item['variation_id'] ); ?>">Design: <?php echo esc_html( $item['name'] ); ?></a>
+									<a href="<?php echo esc_url( $item['url'] . '/?variation=' . $item['variation_id'] ); ?>">Design: <?php echo esc_html( $item['name'] ); ?></a>
 								</div>
 								<div>Code Ref: <span class="fabric-pattern-number"><?php echo esc_html( $item['variation']['no'] ); ?></span></div>
 								<a id="remove-from-cart" class="remove-from-cart" data-id="<?php echo esc_attr( $item['id'] ); ?>" data-variation="<?php echo esc_attr( $item['variation_id'] ); ?>" href="javascript:;">Remove from basket</a>
